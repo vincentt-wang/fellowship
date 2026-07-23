@@ -194,7 +194,7 @@ h2 em{font-style:italic;font-weight:700;background:var(--grad-title);-webkit-bac
 .photo-slide h2{max-width:15em}
 .photo-slide .lead{margin-left:0;max-width:40em}
 .photo-slide .highlights{max-width:none}
-.photo-slide .hl-card{background:rgba(255,255,255,.86);border-color:rgba(255,255,255,.5);box-shadow:0 20px 44px -24px rgba(0,0,0,.7);backdrop-filter:blur(8px) saturate(1.1);transition:.3s var(--ease)}
+.photo-slide .hl-card{background:rgba(255,255,255,.78);border-color:rgba(255,255,255,.45);box-shadow:0 20px 44px -24px rgba(0,0,0,.7);backdrop-filter:blur(10px) saturate(1.15);transition:.3s var(--ease)}
 .photo-slide .hl-card:hover{transform:translateY(-4px);box-shadow:0 0 0 1px rgba(0,212,255,.5),0 26px 50px -22px rgba(0,140,200,.5)}
 .photo-slide .hl-card .hlk{color:#0284c7}
 .photo-slide .hl-card .hlv{color:#0b1424}
@@ -207,8 +207,13 @@ h2 em{font-style:italic;font-weight:700;background:var(--grad-title);-webkit-bac
 .mentors{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
 @media(max-width:860px){.mentors{grid-template-columns:1fr 1fr}}
 @media(max-width:460px){.mentors{grid-template-columns:1fr}}
-.mcard{border:1px solid var(--line);border-radius:18px;background:var(--panel);padding:32px 22px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:5px;transition:.3s}
-.mcard:hover{transform:translateY(-5px);box-shadow:var(--card-sh-hover);border-color:transparent}
+.mcard{position:relative;perspective:1100px;min-height:284px;background:none;border:0;padding:0;outline:none}
+.mcard-inner{position:relative;width:100%;min-height:284px;transition:transform .65s var(--ease);transform-style:preserve-3d}
+.mcard:hover .mcard-inner,.mcard.flip .mcard-inner,.mcard:focus-visible .mcard-inner{transform:rotateY(180deg)}
+.mcard-front,.mcard-back{position:absolute;inset:0;-webkit-backface-visibility:hidden;backface-visibility:hidden;border:1px solid var(--line);border-radius:18px;background:var(--panel);padding:30px 22px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:5px;box-shadow:var(--card-sh)}
+.mcard:hover .mcard-front,.mcard:hover .mcard-back{box-shadow:var(--card-sh-hover);border-color:transparent}
+.mcard-back{transform:rotateY(180deg);justify-content:center;background:linear-gradient(160deg,rgba(0,212,255,.12),var(--panel-2))}
+.mbio{font-size:1rem;color:var(--ink-soft);line-height:1.52}
 .headshot{width:90px;height:90px;border-radius:50%;display:grid;place-items:center;font-family:var(--font-disp);font-weight:800;font-size:1.9rem;color:#04121a;background:conic-gradient(from 200deg,var(--cyan),var(--cyan-2),var(--amber),var(--cyan));box-shadow:0 12px 30px -10px rgba(0,212,255,.6);margin-bottom:12px;border:3px solid var(--bg-2);overflow:hidden}
 .headshot img{width:100%;height:100%;object-fit:cover;border-radius:50%}
 .mcard .mn{font-family:var(--font-disp);font-weight:700;font-size:1.34rem;color:#fff}
@@ -339,7 +344,7 @@ footer{padding:60px 0 70px;background:rgba(4,7,15,.72);border-top:1px solid var(
 <nav><div class="navin">
   <div class="brand">
     <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="15" cy="16" r="8" fill="none" stroke="#00D4FF" stroke-width="2.2"/><circle cx="21" cy="12" r="3.4" fill="#FF9E2C"/></svg>
-    <span>The Fellowship</span>
+    <span>Stanford ASES</span>
   </div>
   <div class="navtabs">
     <a href="#mission" data-en="Mission" data-zh="使命">Mission</a>
@@ -361,7 +366,7 @@ footer{padding:60px 0 70px;background:rgba(4,7,15,.72);border-top:1px solid var(
 <header class="hero" id="home">
   <div class="hero-in">
     <span class="eyebrow"><span class="dot"></span><span data-en="A 4-week founder program · hosted by Stanford ASES Taiwan" data-zh="為期四週的創辦人養成 · Stanford ASES Taiwan 主辦">A 4-week founder program · hosted by Stanford ASES Taiwan</span></span>
-    <h1 data-en="Great founders <em>start early.</em>" data-zh="厲害的創辦人，<em>都起步得早。</em>">Great founders <em>start early.</em></h1>
+    <h1 data-en="Where the next great founders <em>begin.</em>" data-zh="下一批偉大的創辦人，<em>從這裡開始。</em>">Where the next great founders <em>begin.</em></h1>
     <p class="sub" data-en="A four-week fellowship, hosted by <span class='hl-gold'>Stanford ASES Taiwan</span>, for founders already building. We show up at the <span class='hl-cyan'>earliest stage</span>, and it ends on Asia's biggest Gen Z stage." data-zh="由 <span class='hl-gold'>Stanford ASES Taiwan</span> 主辦的四週 fellowship，給已經在動手做的創辦人。我們在<span class='hl-cyan'>最早期</span>就陪著你，最後站上亞洲最大的 Gen Z 舞台。">A four-week fellowship, hosted by <span class="hl-gold">Stanford ASES Taiwan</span>, for founders already building. We show up at the <span class="hl-cyan">earliest stage</span>, and it ends on Asia's biggest Gen Z stage.</p>
     <div class="cta-row">
       <button class="btn btn-primary" onclick="goStepById('apply')">
@@ -431,23 +436,23 @@ footer{padding:60px 0 70px;background:rgba(4,7,15,.72);border-top:1px solid var(
   <div class="weeks">
     <div class="wcard rv" tabindex="0">
       <span class="wn">Week 1</span><span class="wd">Aug 15 · Sat</span>
-      <span class="wt" data-en="Frame the problem" data-zh="定義問題">Frame the problem</span>
-      <div class="expand"><p data-en="Kick off with a flight mentor. Cut the project down to the one job your first users hire it for, and commit to a goal for the week." data-zh="與飛行導師開場。把專案收斂到第一批用戶真正用它解決的那一件事，並定下本週目標。">Kick off with a flight mentor. Cut the project down to the one job your first users hire it for, and commit to a goal for the week.</p></div>
+      <span class="wt" data-en="Kickoff" data-zh="開場">Kickoff</span>
+      <div class="expand"><p data-en="Meet the batch. A guest founder shares their real story, every team gives its first open update, and you set your first goal for the week." data-zh="與整梯見面。一位客座創辦人分享他的真實故事，每一隊做第一次公開回報，你也定下本週的第一個目標。">Meet the batch. A guest founder shares their real story, every team gives its first open update, and you set your first goal for the week.</p></div>
     </div>
     <div class="wcard rv d1" tabindex="0">
       <span class="wn">Week 2</span><span class="wd">Aug 22 · Sat</span>
-      <span class="wt" data-en="Build the evidence" data-zh="累積證據">Build the evidence</span>
-      <div class="expand"><p data-en="Report last week in the open. A new flight mentor pressure-tests demand and feasibility, then you lock the next goal." data-zh="公開回報上週。新的飛行導師壓力測試需求與可行性，接著鎖定下一個目標。">Report last week in the open. A new flight mentor pressure-tests demand and feasibility, then you lock the next goal.</p></div>
+      <span class="wt" data-en="The weekly loop" data-zh="每週的節奏">The weekly loop</span>
+      <div class="expand"><p data-en="The same rhythm: a new guest founder's story, your open update on hits and misses, feedback on your fundraising, and the next goal." data-zh="同樣的節奏：一位新的客座創辦人分享故事，你公開回報這週的成功與失敗，拿到募資上的回饋，再定下一個目標。">The same rhythm: a new guest founder's story, your open update on hits and misses, feedback on your fundraising, and the next goal.</p></div>
     </div>
     <div class="wcard rv d2" tabindex="0">
       <span class="wn">Week 3</span><span class="wd">Aug 29 · Sat</span>
-      <span class="wt" data-en="Sharpen the story" data-zh="磨利敘事">Sharpen the story</span>
-      <div class="expand"><p data-en="Turn real results into a narrative an investor believes. A mentor stress-tests the pitch and the numbers." data-zh="把實際成績變成投資人會相信的敘事。導師壓力測試你的 pitch 與數字。">Turn real results into a narrative an investor believes. A mentor stress-tests the pitch and the numbers.</p></div>
+      <span class="wt" data-en="Momentum" data-zh="累積動能">Momentum</span>
+      <div class="expand"><p data-en="Another guest founder, more open updates, and sharper feedback on your pitch and how you are raising, week over week." data-zh="又一位客座創辦人、更多公開回報，以及對你的 pitch 與募資更精準的回饋，一週一週累積。">Another guest founder, more open updates, and sharper feedback on your pitch and how you are raising, week over week.</p></div>
     </div>
     <div class="wcard rv d3" tabindex="0">
       <span class="wn">Week 4</span><span class="wd">Sep 5 · Sat</span>
-      <span class="wt" data-en="Dress rehearsal" data-zh="正式彩排">Dress rehearsal</span>
-      <div class="expand"><p data-en="Full run-through in front of the final-week judge, so every project gets an honest read before the stage." data-zh="在最終週評審面前完整走一遍，讓每個專案上台前都拿到誠實的評點。">Full run-through in front of the final-week judge, so every project gets an honest read before the stage.</p></div>
+      <span class="wt" data-en="Before Demo Day" data-zh="Demo Day 前一週">Before Demo Day</span>
+      <div class="expand"><p data-en="The final session. Sharpen the pitch and the fundraising story, so the teams heading to the stage are ready." data-zh="最後一場。把 pitch 與募資故事磨到位，讓要上台的隊伍準備好。">The final session. Sharpen the pitch and the fundraising story, so the teams heading to the stage are ready.</p></div>
     </div>
     <div class="wcard demo rv d3" tabindex="0">
       <span class="wn">Demo Day</span><span class="wd">Sep 9 · Wed</span>
@@ -466,29 +471,49 @@ footer{padding:60px 0 70px;background:rgba(4,7,15,.72);border-top:1px solid var(
   </div>
 
   <div class="mentors">
-    <div class="mcard rv">
-      <div class="headshot" aria-hidden="true">DD</div>
-      <div class="mn" data-en="David Day" data-zh="David Day">David Day</div>
-      <div class="mr" data-en="Founder · YC, Founders Inc" data-zh="創辦人 · YC、Founders Inc">Founder · YC, Founders Inc</div>
-      <div class="mo" data-en="LunaBill (YC F25)" data-zh="LunaBill（YC F25）">LunaBill (YC F25)</div>
+    <div class="mcard rv" tabindex="0">
+      <div class="mcard-inner">
+        <div class="mcard-front">
+          <div class="headshot" aria-hidden="true">DD</div>
+          <div class="mn" data-en="David Day" data-zh="David Day">David Day</div>
+          <div class="mr" data-en="Founder · YC, Founders Inc" data-zh="創辦人 · YC、Founders Inc">Founder · YC, Founders Inc</div>
+          <div class="mo" data-en="LunaBill (YC F25)" data-zh="LunaBill（YC F25）">LunaBill (YC F25)</div>
+        </div>
+        <div class="mcard-back"><p class="mbio" data-en="Founder of LunaBill (YC F25) and host of Formosa Founders House. He has walked the Founders Inc to YC path himself, and mentors founders heading overseas." data-zh="LunaBill（YC F25）創辦人，Formosa Founders House 主理人。他自己走過 Founders Inc 到 YC 的路，帶著要出海的創辦人。">Founder of LunaBill (YC F25) and host of Formosa Founders House. He has walked the Founders Inc to YC path himself, and mentors founders heading overseas.</p></div>
+      </div>
     </div>
-    <div class="mcard rv d1">
-      <div class="headshot" aria-hidden="true">JC</div>
-      <div class="mn" data-en="Johnny Chang" data-zh="Johnny Chang">Johnny Chang</div>
-      <div class="mr" data-en="Founder · Pear VC" data-zh="創辦人 · Pear VC">Founder · Pear VC</div>
-      <div class="mo" data-en="Plug and Play" data-zh="Plug and Play">Plug and Play</div>
+    <div class="mcard rv d1" tabindex="0">
+      <div class="mcard-inner">
+        <div class="mcard-front">
+          <div class="headshot" aria-hidden="true">JC</div>
+          <div class="mn" data-en="Johnny Chang" data-zh="Johnny Chang">Johnny Chang</div>
+          <div class="mr" data-en="Founder · Pear VC" data-zh="創辦人 · Pear VC">Founder · Pear VC</div>
+          <div class="mo" data-en="Plug and Play" data-zh="Plug and Play">Plug and Play</div>
+        </div>
+        <div class="mcard-back"><p class="mbio" data-en="A founder backed by Pear VC and Plug and Play, with an international track record. He shares what it takes to raise and build across borders." data-zh="由 Pear VC 與 Plug and Play 支持的創辦人，具國際背景。分享跨境募資與打造產品的經驗。">A founder backed by Pear VC and Plug and Play, with an international track record. He shares what it takes to raise and build across borders.</p></div>
+      </div>
     </div>
-    <div class="mcard rv d2">
-      <div class="headshot" aria-hidden="true">CJ</div>
-      <div class="mn" data-en="Cjin Cheng (CJ)" data-zh="Cjin Cheng（CJ）">Cjin Cheng (CJ)</div>
-      <div class="mr" data-en="Partner · 500 Global" data-zh="合夥人 · 500 Global">Partner · 500 Global</div>
-      <div class="mo" data-en="Brought 500 Global to Taiwan" data-zh="把 500 Global 帶進台灣">Brought 500 Global to Taiwan</div>
+    <div class="mcard rv d2" tabindex="0">
+      <div class="mcard-inner">
+        <div class="mcard-front">
+          <div class="headshot" aria-hidden="true">CJ</div>
+          <div class="mn" data-en="Cjin Cheng (CJ)" data-zh="Cjin Cheng（CJ）">Cjin Cheng (CJ)</div>
+          <div class="mr" data-en="Partner · 500 Global" data-zh="合夥人 · 500 Global">Partner · 500 Global</div>
+          <div class="mo" data-en="Brought 500 Global to Taiwan" data-zh="把 500 Global 帶進台灣">Brought 500 Global to Taiwan</div>
+        </div>
+        <div class="mcard-back"><p class="mbio" data-en="Partner at 500 Global who brought 500 Global to Taiwan and runs Tonic Fund. He has backed and coached founders through their earliest rounds." data-zh="500 Global 合夥人，把 500 Global 帶進台灣，並經營 Tonic Fund。陪創辦人走過最早期的每一輪。">Partner at 500 Global who brought 500 Global to Taiwan and runs Tonic Fund. He has backed and coached founders through their earliest rounds.</p></div>
+      </div>
     </div>
-    <div class="mcard rv d3">
-      <div class="headshot" aria-hidden="true">SG</div>
-      <div class="mn" data-en="Sing" data-zh="Sing">Sing</div>
-      <div class="mr" data-en="Co-organizer · StarWorks" data-zh="協辦 · 炙星 StarWorks">Co-organizer · StarWorks</div>
-      <div class="mo" data-en="Ecosystem builder" data-zh="生態系建構者">Ecosystem builder</div>
+    <div class="mcard rv d3" tabindex="0">
+      <div class="mcard-inner">
+        <div class="mcard-front">
+          <div class="headshot" aria-hidden="true">SG</div>
+          <div class="mn" data-en="Sing" data-zh="Sing">Sing</div>
+          <div class="mr" data-en="Co-organizer · StarWorks" data-zh="協辦 · 炙星 StarWorks">Co-organizer · StarWorks</div>
+          <div class="mo" data-en="Ecosystem builder" data-zh="生態系建構者">Ecosystem builder</div>
+        </div>
+        <div class="mcard-back"><p class="mbio" data-en="CEO of StarWorks, ecosystem builder and emerging manager. As co-organizer he brings the space, the community and the talent." data-zh="炙星 StarWorks 執行長，生態系建構者與 emerging manager。以協辦身分帶來空間、社群與人才。">CEO of StarWorks, ecosystem builder and emerging manager. As co-organizer he brings the space, the community and the talent.</p></div>
+      </div>
     </div>
   </div>
   <p class="moreline rv" data-en="Flight mentors and judges also include an a16z-backed founder, Brandon (Addin) and Tina, all with international backgrounds. One mentor each Saturday; more names as Batch 1 forms." data-zh="飛行導師與評審還包括一位 a16z 背景的創辦人、Addin 的 Brandon，以及 Tina，皆具國際背景。每週六一位導師，更多名單隨第一期成形陸續公布。">Flight mentors and judges also include an a16z-backed founder, Brandon (Addin) and Tina, all with international backgrounds. One mentor each Saturday; more names as Batch 1 forms.</p>
@@ -602,7 +627,7 @@ footer{padding:60px 0 70px;background:rgba(4,7,15,.72);border-top:1px solid var(
     <div>
       <div class="fbrand">
         <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="15" cy="16" r="8" fill="none" stroke="#00D4FF" stroke-width="2.2"/><circle cx="21" cy="12" r="3.4" fill="#FF9E2C"/></svg>
-        <span>The Fellowship</span>
+        <span>Stanford ASES</span>
       </div>
       <p style="margin-top:12px;color:var(--ink-dim);max-width:28em;font-size:1.02rem" data-en="An invisible college for builders. Hosted by Stanford ASES Taiwan, co-organized by StarWorks." data-zh="一所給 builder 的隱形大學。由 Stanford ASES Taiwan 主辦，炙星 StarWorks 協辦。">An invisible college for builders. Hosted by Stanford ASES Taiwan, co-organized by StarWorks.</p>
     </div>
@@ -815,6 +840,10 @@ function goStepById(id){var i=STEPS.indexOf(id);if(i>=0)goStep(i);else{var el=do
   document.querySelectorAll('.pillar,.wcard').forEach(function(el){
     el.addEventListener('click',function(){el.classList.toggle('open');});
     el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();el.classList.toggle('open');}});
+  });
+  document.querySelectorAll('.mcard').forEach(function(el){
+    el.addEventListener('click',function(){el.classList.toggle('flip');});
+    el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();el.classList.toggle('flip');}});
   });
   // keyboard: horizontal arrows advance the deck; vertical scroll stays native
   document.addEventListener('keydown',function(e){
