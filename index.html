@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Fellowship · Where builders become founders in 4 weeks</title>
+<meta name="description" content="A 4-week founder fellowship inside the StarWorks community. Invisible-college model: we back you before the capital markets do. Batch 1 starts Aug 15, Demo Day at the BobaTech Summit." />
+<link rel="alternate" hreflang="en" href="./" />
+<link rel="alternate" hreflang="zh-TW" href="./?lang=zh" />
+<meta property="og:title" content="The Fellowship · Where builders become founders in 4 weeks" />
+<meta property="og:description" content="An invisible college for builders. StarWorks × the founder community × Vincent. Batch 1 starts Aug 15." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FFF3E9'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23FF5A3C' stroke-width='2.4'/%3E%3Ccircle cx='16' cy='16' r='3.4' fill='%23FF6600'/%3E%3Ccircle cx='24.5' cy='9.5' r='2.6' fill='%230FA79B'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --paper:#ffffff;
+  --cream:#fff9f3;--cream-2:#fdf1e6;--cream-3:#fae7d6;
+  --ink:#20160f;--ink-soft:#6f6157;--ink-dim:#9c8b7d;--ink-faint:#c3b4a6;
+  --coral:#ff5a3c;--coral-deep:#e5401f;--orange:#ff6a1a;--orange-2:#ff8a3d;
+  --teal:#0fa79b;--teal-deep:#0b7f76;--gold:#f4a72c;
+  --line:rgba(32,22,15,.10);--line-2:rgba(32,22,15,.07);--line-strong:rgba(32,22,15,.16);
+  --card-sh:0 1px 0 rgba(255,255,255,.7) inset,0 20px 40px -28px rgba(120,60,20,.5);
+  --card-sh-hover:0 24px 54px -26px rgba(210,80,30,.45);
+  --grad-warm:linear-gradient(103deg,var(--coral),var(--orange) 52%,var(--gold));
+  --grad-title:linear-gradient(102deg,var(--coral-deep),var(--orange) 55%,var(--gold));
+  --font-disp:"Space Grotesk","Noto Sans TC",sans-serif;
+  --font-body:"Inter","Noto Sans TC",sans-serif;
+  --mono:"JetBrains Mono",monospace;
+  --min-label:1.1rem;--min-font:1rem;
+  --ease:cubic-bezier(.2,.7,.2,1);--maxw:1160px;--r:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--cream);-webkit-text-size-adjust:100%}
+body{background:var(--cream);color:var(--ink);font-family:var(--font-body);font-size:1.0625rem;line-height:1.68;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+#warmth{position:fixed;inset:0;z-index:-1;pointer-events:none;background:
+  radial-gradient(60% 44% at 12% 4%,rgba(255,120,60,.10),transparent 60%),
+  radial-gradient(52% 40% at 92% 14%,rgba(244,167,44,.12),transparent 60%),
+  radial-gradient(60% 46% at 50% 102%,rgba(15,167,155,.07),transparent 64%)}
+a{color:var(--coral-deep);text-decoration:none}
+.wrap{width:min(92vw,var(--maxw));margin-inline:auto}
+img{max-width:100%;display:block}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:linear-gradient(to bottom,rgba(255,249,243,.94),rgba(255,249,243,.72));border-bottom:1px solid var(--line-2)}
+.navin{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px clamp(16px,4vw,42px)}
+.brand{display:flex;align-items:center;gap:11px;font-family:var(--font-disp);font-weight:700;font-size:1.1rem;letter-spacing:.04em;white-space:nowrap;color:var(--ink)}
+.brand svg{width:30px;height:30px;flex:none}
+.navtabs{display:flex;gap:2px}
+.navtabs a{color:var(--ink-soft);font-size:1.02rem;font-weight:500;padding:8px 13px;border-radius:10px;white-space:nowrap;transition:.2s}
+.navtabs a:hover{color:var(--coral-deep);background:var(--cream-2)}
+.navright{display:flex;align-items:center;gap:10px}
+.langpill{display:inline-flex;border:1px solid var(--line-strong);border-radius:999px;overflow:hidden;background:var(--paper)}
+.langpill button{font-family:var(--mono);font-size:1rem;font-weight:600;padding:6px 13px;background:transparent;border:0;color:var(--ink-dim);cursor:pointer;transition:.2s}
+.langpill button.on{background:var(--coral);color:#fff}
+.apply-pill{font-family:var(--font-body);font-size:1.02rem;font-weight:700;padding:9px 19px;border-radius:999px;background:var(--grad-warm);color:#fff;white-space:nowrap;transition:.25s;border:0;cursor:pointer}
+.apply-pill:hover{transform:translateY(-2px);box-shadow:0 12px 30px -10px rgba(255,90,60,.6)}
+@media(max-width:820px){.navtabs{display:none}}
+@media(max-width:440px){.navin{padding-left:16px;padding-right:14px;gap:8px}.brand span{display:none}.apply-pill{padding:9px 15px}.langpill button{padding:6px 11px}}
+
+/* HERO */
+.hero{position:relative;min-height:clamp(560px,86vh,860px);display:flex;align-items:flex-end;overflow:hidden}
+.hero-media{position:absolute;inset:0;z-index:0}
+.hero-media img{width:100%;height:118%;object-fit:cover;object-position:50% 42%;will-change:transform}
+.hero-media::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(180deg,rgba(24,12,6,.28) 0%,rgba(24,12,6,.10) 34%,rgba(24,12,6,.30) 62%,rgba(20,10,4,.86) 100%),
+  linear-gradient(94deg,rgba(20,10,4,.62) 0%,rgba(20,10,4,.12) 52%,transparent 78%)}
+.hero-in{position:relative;z-index:2;width:min(92vw,var(--maxw));margin-inline:auto;padding:clamp(30px,6vh,68px) 0 clamp(30px,5vh,54px)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:1rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#ffd9a6;margin-bottom:18px}
+.eyebrow::before{content:"";width:30px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--coral),transparent)}
+.hero h1{font-family:var(--font-disp);font-weight:700;font-size:clamp(2.35rem,5.6vw,4.1rem);line-height:1.04;letter-spacing:-.02em;color:#fff;max-width:15em;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+.hero h1 .hl{background:var(--grad-warm);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{margin-top:18px;font-size:clamp(1.08rem,1.9vw,1.3rem);color:#f6e7db;max-width:38em;text-shadow:0 1px 14px rgba(0,0,0,.4)}
+.cta-row{display:flex;gap:13px;flex-wrap:wrap;margin-top:28px}
+.btn{font-family:var(--font-body);font-size:1.04rem;font-weight:700;padding:14px 24px;border-radius:14px;cursor:pointer;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.10);color:#fff;transition:.25s;white-space:nowrap;display:inline-flex;align-items:center;gap:9px;backdrop-filter:blur(4px)}
+.btn:hover{border-color:#fff;transform:translateY(-2px)}
+.btn svg{width:18px;height:18px}
+.btn-primary{background:var(--grad-warm);color:#fff;border-color:transparent}
+.btn-primary:hover{box-shadow:0 14px 36px -12px rgba(255,90,60,.7)}
+/* countdown */
+.countdown{margin-top:34px;display:flex;flex-wrap:wrap;gap:10px;align-items:stretch}
+.cdunit{min-width:76px;padding:12px 6px 10px;border-radius:14px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(6px);text-align:center;display:flex;flex-direction:column;gap:3px}
+.cdnum{font-family:var(--font-disp);font-weight:700;font-size:clamp(1.7rem,3.6vw,2.5rem);line-height:1;color:#fff;font-variant-numeric:tabular-nums}
+.cdlab{font-family:var(--mono);font-size:1rem;letter-spacing:.08em;text-transform:uppercase;color:#ffd9a6}
+.cdsep{display:flex;align-items:center;font-family:var(--font-disp);font-weight:700;font-size:2rem;color:rgba(255,255,255,.5);padding-bottom:14px}
+.cdnote{margin-top:12px;display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:1.02rem;color:#ffe9cf}
+.dotpulse{width:9px;height:9px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 0 rgba(255,90,60,.6);animation:pulse 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,90,60,.6)}70%{box-shadow:0 0 0 13px rgba(255,90,60,0)}100%{box-shadow:0 0 0 0 rgba(255,90,60,0)}}
+@media(max-width:520px){.cdsep{display:none}.cdunit{min-width:0;flex:1}}
+
+/* SECTIONS */
+section{padding:clamp(52px,8vh,92px) 0;position:relative}
+.sec-cream{background:var(--cream)}
+.sec-paper{background:var(--paper);border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
+.kick{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:1rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--coral-deep);margin-bottom:14px}
+.kick::before{content:"";width:22px;height:2px;border-radius:2px;background:var(--coral)}
+h2{font-family:var(--font-disp);font-weight:700;font-size:clamp(1.85rem,3.7vw,2.7rem);line-height:1.1;letter-spacing:-.015em;color:var(--ink);max-width:19em}
+h2 .hl{background:var(--grad-title);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{margin-top:16px;font-size:1.13rem;color:var(--ink-soft);max-width:47em}
+p.body{margin:12px 0;color:var(--ink-soft)}p.body strong{color:var(--ink)}
+
+/* MISSION */
+.credit{margin-top:28px;border:1px solid var(--line);border-left:4px solid var(--coral);border-radius:16px;background:var(--cream);padding:22px 26px;max-width:54em}
+.credit .cl{font-family:var(--mono);font-size:1rem;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-deep);margin-bottom:8px}
+.credit p{color:var(--ink-soft);font-size:1.08rem}
+.proof{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px}
+@media(max-width:820px){.proof{grid-template-columns:repeat(2,1fr)}}
+.pf{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:22px 20px;box-shadow:var(--card-sh);display:flex;flex-direction:column;min-height:158px}
+.pf .pfn{font-family:var(--font-disp);font-weight:700;font-size:clamp(1.6rem,3vw,2.2rem);background:var(--grad-title);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.1}
+.pf.names .pfn{font-size:clamp(1.08rem,1.7vw,1.28rem);line-height:1.25}
+.pf .pfl{color:var(--ink-soft);font-size:1.02rem;margin-top:auto;padding-top:10px;line-height:1.44}
+.pfsrc{color:var(--ink-dim);font-size:1rem;margin-top:16px}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}
+@media(max-width:860px){.pillars{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.pillars{grid-template-columns:1fr}}
+.pillar{border:1px solid var(--line);border-radius:18px;background:var(--paper);padding:24px 22px;box-shadow:var(--card-sh);display:flex;flex-direction:column;gap:11px;min-height:186px;transition:.25s}
+.pillar:hover{transform:translateY(-4px);box-shadow:var(--card-sh-hover);border-color:var(--cream-3)}
+.pillar .pico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(255,90,60,.16),rgba(244,167,44,.14));border:1px solid rgba(255,90,60,.24)}
+.pillar .pico svg{width:22px;height:22px;stroke:var(--coral-deep);fill:none}
+.pillar h4{font-family:var(--font-disp);font-weight:600;font-size:1.16rem;color:var(--ink)}
+.pillar p{font-size:1.02rem;color:var(--ink-soft)}
+
+/* TIMELINE */
+.tl{display:flex;flex-direction:column;gap:14px;margin-top:34px}
+.tlrow{display:grid;grid-template-columns:128px 1fr;gap:24px;align-items:start;border:1px solid var(--line);border-radius:18px;background:var(--paper);padding:22px 26px;box-shadow:var(--card-sh);transition:.25s}
+.tlrow:hover{transform:translateY(-3px);box-shadow:var(--card-sh-hover)}
+@media(max-width:640px){.tlrow{grid-template-columns:1fr;gap:12px}}
+.tlweek{display:flex;flex-direction:column;gap:4px}
+.tlweek .wn{font-family:var(--font-disp);font-weight:700;font-size:1.55rem;background:var(--grad-title);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tlweek .wd{font-family:var(--mono);font-size:1rem;color:var(--ink-dim)}
+.tlbody h4{font-family:var(--font-disp);font-weight:600;font-size:1.2rem;color:var(--ink);margin-bottom:6px}
+.tlbody p{font-size:1.04rem;color:var(--ink-soft);margin-bottom:10px}
+.tltag{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:1rem;color:var(--teal-deep);border:1px solid rgba(15,167,155,.3);border-radius:9px;padding:5px 12px;background:rgba(15,167,155,.07)}
+.demorow{border-color:rgba(244,167,44,.5);background:linear-gradient(120deg,rgba(255,106,26,.09),rgba(244,167,44,.09))}
+.demorow .tltag{color:var(--coral-deep);border-color:rgba(255,90,60,.34);background:rgba(255,90,60,.08)}
+
+/* PHOTO BAND (mentors header, ecosystem) */
+.band{position:relative;border-radius:22px;overflow:hidden;margin-top:32px;box-shadow:var(--card-sh)}
+.band img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.band .band-in{position:relative;z-index:2;padding:clamp(28px,5vw,52px);min-height:clamp(220px,30vw,300px);display:flex;flex-direction:column;justify-content:flex-end}
+.band::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(100deg,rgba(20,10,4,.82) 0%,rgba(20,10,4,.4) 55%,rgba(20,10,4,.18) 100%)}
+.band h3{position:relative;z-index:2;font-family:var(--font-disp);font-weight:700;font-size:clamp(1.4rem,2.8vw,2rem);color:#fff;max-width:16em;text-shadow:0 2px 20px rgba(0,0,0,.4)}
+.band p{position:relative;z-index:2;color:#f3e4d8;font-size:1.08rem;margin-top:10px;max-width:34em}
+
+/* MENTORS */
+.mentors{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:20px}
+@media(max-width:860px){.mentors{grid-template-columns:1fr 1fr}}
+@media(max-width:460px){.mentors{grid-template-columns:1fr}}
+.mcard{border:1px solid var(--line);border-radius:18px;background:var(--paper);padding:26px 20px;box-shadow:var(--card-sh);display:flex;flex-direction:column;align-items:center;text-align:center;gap:5px;min-height:230px;transition:.25s}
+.mcard:hover{transform:translateY(-4px);box-shadow:var(--card-sh-hover)}
+.headshot{width:84px;height:84px;border-radius:50%;display:grid;place-items:center;font-family:var(--font-disp);font-weight:700;font-size:1.7rem;color:#fff;background:conic-gradient(from 210deg,var(--coral),var(--orange-2),var(--gold),var(--coral));box-shadow:0 10px 26px -10px rgba(255,90,60,.55);margin-bottom:9px;border:3px solid var(--paper);overflow:hidden}
+.headshot img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.mcard .mn{font-family:var(--font-disp);font-weight:700;font-size:1.16rem;color:var(--ink)}
+.mcard .mr{font-size:1.02rem;color:var(--coral-deep);font-weight:600}
+.mcard .mo{font-size:1rem;color:var(--ink-dim);font-family:var(--mono)}
+.moreline{margin-top:24px;text-align:center;font-size:1.06rem;color:var(--ink-dim)}
+
+/* GALLERY / CULTURE */
+.gallery-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px}
+.marquee{margin-top:32px;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;-ms-overflow-style:none;mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+.marquee::-webkit-scrollbar{display:none}
+.mtrack{display:flex;gap:16px;width:max-content;animation:scrollx 44s linear infinite}
+.marquee:hover .mtrack{animation-play-state:paused}
+@keyframes scrollx{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.gcard{position:relative;width:clamp(240px,32vw,340px);aspect-ratio:4/3;border-radius:18px;overflow:hidden;flex:none;box-shadow:var(--card-sh)}
+.gcard img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.gcard:hover img{transform:scale(1.06)}
+.gcard::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 44%,rgba(20,10,4,.72))}
+.gcap{position:absolute;left:16px;bottom:14px;z-index:2;color:#fff;font-family:var(--font-disp);font-weight:600;font-size:1.1rem;text-shadow:0 1px 12px rgba(0,0,0,.5)}
+
+/* ECOSYSTEM */
+.eco{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:14px;align-items:stretch;margin-top:32px}
+@media(max-width:860px){.eco{grid-template-columns:1fr;gap:14px}.eco .ecox{display:none}}
+.econode{border:1px solid var(--line);border-radius:18px;background:var(--paper);padding:28px 24px;box-shadow:var(--card-sh);display:flex;flex-direction:column;gap:10px;transition:.25s}
+.econode:hover{transform:translateY(-4px);box-shadow:var(--card-sh-hover)}
+.econode .en-ic{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(15,167,155,.16),rgba(255,106,26,.12));border:1px solid var(--line-strong)}
+.econode .en-ic svg{width:24px;height:24px;stroke:var(--teal-deep);fill:none}
+.econode h4{font-family:var(--font-disp);font-weight:700;font-size:1.26rem;color:var(--ink)}
+.econode .en-role{font-family:var(--mono);font-size:1rem;color:var(--coral-deep);letter-spacing:.03em}
+.econode p{font-size:1.02rem;color:var(--ink-soft)}
+.ecox{display:grid;place-items:center;font-family:var(--font-disp);font-weight:700;font-size:1.7rem;color:var(--ink-faint)}
+
+/* DEMO DAY / EXIT */
+.exit-card{margin-top:30px;border:1px solid rgba(244,167,44,.4);border-radius:22px;background:linear-gradient(160deg,var(--paper),var(--cream) 70%);padding:clamp(26px,4vw,44px);box-shadow:var(--card-sh)}
+.exit-card .goldkick{font-family:var(--mono);font-size:1rem;letter-spacing:.08em;text-transform:uppercase;color:var(--coral-deep);margin-bottom:12px}
+.exit-card h3{font-family:var(--font-disp);font-weight:700;font-size:clamp(1.5rem,3vw,2.15rem);line-height:1.14;color:var(--ink);max-width:20em}
+.exit-card h3 .hl{background:var(--grad-title);-webkit-background-clip:text;background-clip:text;color:transparent}
+.exit-card p{margin-top:14px;color:var(--ink-soft);font-size:1.1rem;max-width:48em}
+.highlights{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+@media(max-width:860px){.highlights{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.highlights{grid-template-columns:1fr}}
+.hl-card{border:1px solid var(--line);border-radius:15px;background:var(--paper);padding:18px 18px;display:flex;flex-direction:column;gap:6px}
+.hl-card .hlk{font-family:var(--mono);font-size:1rem;color:var(--teal-deep);letter-spacing:.05em;text-transform:uppercase}
+.hl-card .hlv{font-family:var(--font-disp);font-weight:700;font-size:1.14rem;color:var(--ink)}
+.hl-card .hld{font-size:1rem;color:var(--ink-soft)}
+.speakers{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.spk{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(244,167,44,.36);border-radius:12px;background:rgba(244,167,44,.09);padding:10px 16px}
+.spk .sdot{width:9px;height:9px;border-radius:50%;background:var(--gold);flex:none}
+.spk .sname{font-weight:700;color:var(--ink)}
+.spk .srole{font-size:1rem;color:var(--ink-dim);font-family:var(--mono)}
+.exit-meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px 22px;font-family:var(--mono);font-size:1rem;color:var(--coral-deep)}
+
+/* FAQ */
+.faq{margin-top:30px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--paper);box-shadow:var(--card-sh)}
+.faq details{border-bottom:1px solid var(--line-2)}
+.faq details:last-child{border-bottom:0}
+.faq summary{list-style:none;cursor:pointer;padding:20px 24px;font-family:var(--font-disp);font-weight:600;font-size:1.14rem;color:var(--ink);display:flex;align-items:center;justify-content:space-between;gap:16px;transition:.2s}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--coral-deep)}
+.faq summary .fx{width:22px;height:22px;flex:none;position:relative;transition:.25s}
+.faq summary .fx::before,.faq summary .fx::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--coral-deep);border-radius:2px}
+.faq summary .fx::before{width:14px;height:2px}
+.faq summary .fx::after{width:2px;height:14px;transition:.25s}
+.faq details[open] summary .fx::after{transform:translate(-50%,-50%) scaleY(0)}
+.faq .fa{padding:0 24px 22px;color:var(--ink-soft);font-size:1.05rem}
+
+/* APPLY */
+.applysec{background:linear-gradient(160deg,var(--cream-2),var(--cream))}
+.apply-box{text-align:center;border:1px solid rgba(255,90,60,.24);border-radius:26px;background:linear-gradient(155deg,var(--paper),var(--cream) 76%);padding:clamp(34px,5vw,60px);box-shadow:0 30px 70px -34px rgba(255,106,26,.4),var(--card-sh)}
+.apply-box h2{margin-inline:auto}
+.apply-box .lead{margin-inline:auto}
+.apply-box .cta-row{justify-content:center}
+.apply-box .btn{border-color:var(--line-strong);background:var(--paper);color:var(--ink)}
+.apply-box .btn:hover{border-color:var(--coral)}
+.apply-box .btn-primary{background:var(--grad-warm);color:#fff;border-color:transparent}
+.apply-note{margin-top:20px;font-family:var(--mono);font-size:1rem;color:var(--ink-dim)}
+
+/* FOOTER */
+footer{padding:52px 0 60px;background:var(--ink);color:#cdbcae;font-size:1.02rem}
+.footin{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:flex-start}
+.footin .fbrand{display:flex;align-items:center;gap:11px;font-family:var(--font-disp);font-weight:700;font-size:1.08rem;color:#fff;letter-spacing:.04em}
+.footin .fbrand svg{width:28px;height:28px}
+.footlinks{display:flex;flex-direction:column;gap:7px}
+.footlinks a{color:#cdbcae}.footlinks a:hover{color:var(--orange-2)}
+.footcopy{margin-top:28px;font-family:var(--mono);font-size:1rem;color:#8b7c6f}
+
+/* MODAL */
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(20,10,4,.62);backdrop-filter:blur(6px)}
+.modal.open{display:flex}
+.modal-card{width:min(100%,540px);max-height:92vh;overflow-y:auto;background:var(--paper);border-radius:24px;padding:clamp(26px,4vw,40px);box-shadow:0 40px 90px -30px rgba(0,0,0,.6);position:relative}
+.modal-card h3{font-family:var(--font-disp);font-weight:700;font-size:1.5rem;color:var(--ink)}
+.modal-card .msub{margin-top:8px;color:var(--ink-soft);font-size:1.04rem}
+.mclose{position:absolute;top:16px;right:16px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--cream);color:var(--ink);cursor:pointer;display:grid;place-items:center;transition:.2s}
+.mclose:hover{background:var(--cream-2);transform:rotate(90deg)}
+.mclose svg{width:18px;height:18px;stroke:currentColor;fill:none}
+.field{margin-top:16px;text-align:left}
+.field label{display:block;font-family:var(--font-disp);font-weight:600;font-size:1.02rem;color:var(--ink);margin-bottom:6px}
+.field input,.field textarea{width:100%;font-family:var(--font-body);font-size:1.02rem;color:var(--ink);padding:12px 14px;border-radius:12px;border:1px solid var(--line-strong);background:var(--cream);transition:.2s}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--coral);background:var(--paper);box-shadow:0 0 0 3px rgba(255,90,60,.14)}
+.field textarea{min-height:92px;resize:vertical}
+.msubmit{margin-top:22px;width:100%;font-family:var(--font-body);font-weight:700;font-size:1.08rem;padding:14px;border-radius:14px;border:0;cursor:pointer;background:var(--grad-warm);color:#fff;transition:.25s}
+.msubmit:hover{transform:translateY(-2px);box-shadow:0 14px 34px -12px rgba(255,90,60,.65)}
+.mfoot{margin-top:14px;font-family:var(--mono);font-size:1rem;color:var(--ink-dim);text-align:center}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+  .hero-media img{height:100%!important;transform:none!important}
+  .mtrack{width:auto;flex-wrap:nowrap}
+}
+</style>
+</head>
+<body>
+<div id="warmth"></div>
+
+<nav><div class="navin">
+  <div class="brand">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="9" fill="none" stroke="#FF5A3C" stroke-width="2.4"/><circle cx="16" cy="16" r="3.4" fill="#FF6600"/><circle cx="24.5" cy="9.5" r="2.6" fill="#0FA79B"/></svg>
+    <span data-en="THE FELLOWSHIP" data-zh="THE FELLOWSHIP">THE FELLOWSHIP</span>
+  </div>
+  <div class="navtabs">
+    <a href="#mission" data-en="Mission" data-zh="使命">Mission</a>
+    <a href="#how" data-en="How it works" data-zh="運作方式">How it works</a>
+    <a href="#mentors" data-en="Mentors" data-zh="導師">Mentors</a>
+    <a href="#life" data-en="The community" data-zh="社群">The community</a>
+    <a href="#demoday" data-en="Demo Day" data-zh="Demo Day">Demo Day</a>
+    <a href="#faq" data-en="FAQ" data-zh="常見問題">FAQ</a>
+  </div>
+  <div class="navright">
+    <div class="langpill" role="group" data-en-aria="Language" data-zh-aria="語言">
+      <button id="langEn" onclick="applyLang('en')">EN</button>
+      <button id="langZh" onclick="applyLang('zh')">ZH</button>
+    </div>
+    <button class="apply-pill" onclick="openApply()" data-en="Apply" data-zh="立即申請">Apply</button>
+  </div>
+</div></nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-media"><img id="heroImg" src="assets/img/hero-circle.webp" alt="" data-en-alt="Founders gathered in a circle under the StarWorks ring lights" data-zh-alt="創辦人在炙星 StarWorks 的環形燈下圍坐" /></div>
+  <div class="hero-in">
+    <span class="eyebrow" data-en="A 4-week founder fellowship" data-zh="為期四週的創辦人 Fellowship">A 4-week founder fellowship</span>
+    <h1 data-en="Where builders become <span class='hl'>founders</span> in 4 weeks." data-zh="四週，讓 builder 成為 <span class='hl'>founder</span>。">Where builders become <span class="hl">founders</span> in 4 weeks.</h1>
+    <p class="sub" data-en="An invisible college for the ones already shipping. We become your first believer before the capital markets ever compete for you." data-zh="一所給正在動手做的人的隱形大學。在資本市場開始搶你之前，我們先成為你的第一個相信者。">An invisible college for the ones already shipping. We become your first believer before the capital markets ever compete for you.</p>
+    <div class="cta-row">
+      <button class="btn btn-primary" onclick="openApply()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        <span data-en="Apply for Batch 1" data-zh="申請第一期">Apply for Batch 1</span>
+      </button>
+      <a class="btn" href="#how">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8l6 4-6 4z" fill="currentColor" stroke="none"/></svg>
+        <span data-en="See how it works" data-zh="了解運作方式">See how it works</span>
+      </a>
+    </div>
+    <div class="countdown" id="countdown" role="timer" data-en-aria="Countdown to Batch 1" data-zh-aria="第一期倒數">
+      <div class="cdunit"><span class="cdnum" id="cdD">--</span><span class="cdlab" data-en="Days" data-zh="天">Days</span></div>
+      <span class="cdsep">:</span>
+      <div class="cdunit"><span class="cdnum" id="cdH">--</span><span class="cdlab" data-en="Hrs" data-zh="時">Hrs</span></div>
+      <span class="cdsep">:</span>
+      <div class="cdunit"><span class="cdnum" id="cdM">--</span><span class="cdlab" data-en="Min" data-zh="分">Min</span></div>
+      <span class="cdsep">:</span>
+      <div class="cdunit"><span class="cdnum" id="cdS">--</span><span class="cdlab" data-en="Sec" data-zh="秒">Sec</span></div>
+    </div>
+    <div class="cdnote"><span class="dotpulse"></span><span id="cdnote" data-en="until Batch 1 begins · Aug 15" data-zh="距離第一期開課 · 8 月 15 日">until Batch 1 begins · Aug 15</span></div>
+  </div>
+</header>
+
+<!-- MISSION -->
+<section id="mission" class="sec-cream"><div class="wrap">
+  <div class="kick" data-en="The Mission" data-zh="使命">The Mission</div>
+  <h2 class="rv" data-en="The invisible college backs you <span class='hl'>before anyone competes to.</span>" data-zh="在所有人開始搶你之前，<span class='hl'>隱形大學先押注你。</span>">The invisible college backs you <span class="hl">before anyone competes to.</span></h2>
+  <p class="lead rv" data-en="By the time a founder is fundable, everyone wants in. The Fellowship exists for the stage before that, when the work is real but the market has not noticed yet. We show up as the first believer, with room, capital, mentorship and a sharp evaluation lens, and we compound from there." data-zh="等到一位創辦人變得可投資時，人人都想擠進來。Fellowship 存在的意義，是那個更早的階段：作品已經真實，但市場還沒注意到。我們在這時成為第一個相信者，帶著空間、資本、導師與一套銳利的評估視角，從這裡一起複利成長。">By the time a founder is fundable, everyone wants in. The Fellowship exists for the stage before that, when the work is real but the market has not noticed yet. We show up as the first believer, with room, capital, mentorship and a sharp evaluation lens, and we compound from there.</p>
+
+  <div class="credit rv">
+    <div class="cl" data-en="Credit where it's due" data-zh="源流致敬">Credit where it's due</div>
+    <p data-en="The model borrows openly from Peter Thiel's Thiel Fellowship and the 1517 Fund's idea of an &ldquo;invisible college&rdquo;: back talented builders directly, outside the traditional gatekeepers, and be the first believer before the capital markets ever compete for them." data-zh="這套模式公開借鏡自 Peter Thiel 的 Thiel Fellowship 與 1517 Fund 提出的「隱形大學」概念：跳過傳統守門人，直接押注有才華的 builder，在資本市場開始搶他們之前，先成為第一個相信者。">The model borrows openly from Peter Thiel's Thiel Fellowship and the 1517 Fund's idea of an &ldquo;invisible college&rdquo;: back talented builders directly, outside the traditional gatekeepers, and be the first believer before the capital markets ever compete for them.</p>
+  </div>
+
+  <div class="proof rv">
+    <div class="pf"><div class="pfn">5.9%</div><div class="pfl" data-en="Thiel / 1517 rate of founders who built a billion-dollar company, versus roughly 1.9% for YC." data-zh="Thiel／1517 打造出十億美元公司的創辦人比率，YC 約為 1.9%。">Thiel / 1517 rate of founders who built a billion-dollar company, versus roughly 1.9% for YC.</div></div>
+    <div class="pf"><div class="pfn">$750B+</div><div class="pfl" data-en="value created by Thiel Fellowship alumni companies to date." data-zh="Thiel Fellowship 校友的公司迄今創造的價值。">value created by Thiel Fellowship alumni companies to date.</div></div>
+    <div class="pf"><div class="pfn">4.41&#215;</div><div class="pfl" data-en="cash returned by 1517's first $20M fund in about a decade." data-zh="1517 首支 2000 萬美元基金約十年內回收的現金倍數。">cash returned by 1517's first $20M fund in about a decade.</div></div>
+    <div class="pf names"><div class="pfn">Ethereum · Figma · Anthropic</div><div class="pfl" data-en="a few of the companies this early-belief model produced." data-zh="這套「最早期就相信」模式產出的部分公司。">a few of the companies this early-belief model produced.</div></div>
+  </div>
+  <p class="pfsrc rv" data-en="Sources: Specter (n=185), Sourcery, 1517fund.com, PitchBook. Rates vary by sample and definition." data-zh="來源：Specter（樣本 185）、Sourcery、1517fund.com、PitchBook；比率依樣本與定義略有差異。">Sources: Specter (n=185), Sourcery, 1517fund.com, PitchBook. Rates vary by sample and definition.</p>
+
+  <div class="pillars">
+    <div class="pillar rv">
+      <div class="pico"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg></div>
+      <h4 data-en="Talent, not credentials" data-zh="看才華，不看履歷">Talent, not credentials</h4>
+      <p data-en="We back the person who is already building, regardless of school, title or network." data-zh="我們押注已經在動手做的人，無關學校、頭銜或人脈。">We back the person who is already building, regardless of school, title or network.</p>
+    </div>
+    <div class="pillar rv">
+      <div class="pico"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/></svg></div>
+      <h4 data-en="First believer" data-zh="第一個相信者">First believer</h4>
+      <p data-en="We commit early, when belief is scarce and worth the most, not after the round is oversubscribed." data-zh="我們在早期就承諾，在相信最稀缺、最值錢的時候，而不是等到募資超額認購之後。">We commit early, when belief is scarce and worth the most, not after the round is oversubscribed.</p>
+    </div>
+    <div class="pillar rv">
+      <div class="pico"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div>
+      <h4 data-en="Momentum over curriculum" data-zh="推進力勝過課綱">Momentum over curriculum</h4>
+      <p data-en="No fixed syllabus. Four weeks engineered to move your one real project forward, fast." data-zh="沒有固定課綱。四週的設計，只為了把你手上那個真實專案快速往前推。">No fixed syllabus. Four weeks engineered to move your one real project forward, fast.</p>
+    </div>
+    <div class="pillar rv">
+      <div class="pico"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+      <h4 data-en="An evaluation lens" data-zh="一套評估透鏡">An evaluation lens</h4>
+      <p data-en="Every project is read through the Deal Lens D/F/V framework, so feedback is honest, structured and investor-grade." data-zh="每個專案都用 Deal Lens 的 D/F/V 架構檢視，讓回饋誠實、有結構，且達到投資人等級。">Every project is read through the Deal Lens D/F/V framework, so feedback is honest, structured and investor-grade.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- HOW IT WORKS -->
+<section id="how" class="sec-paper"><div class="wrap">
+  <div class="kick" data-en="How it works · 4 weeks" data-zh="運作方式 · 四週">How it works · 4 weeks</div>
+  <h2 class="rv" data-en="One flight mentor a week. One honest founder update. <span class='hl'>One goal for the next.</span>" data-zh="每週一位飛行導師，一則誠實的創辦人進度，<span class='hl'>一個下週目標。</span>">One flight mentor a week. One honest founder update. <span class="hl">One goal for the next.</span></h2>
+  <p class="lead rv" data-en="No lecture hall and no fixed syllabus, in the spirit of Founders Inc. Each Saturday brings a flight mentor, a public founder update where hits, misses and failure stories all count, and a single committed goal for the week ahead." data-zh="沒有講堂，也沒有固定課綱，精神取自 Founders Inc。每個週六都有一位飛行導師、一則公開的創辦人進度（成功、失敗與踩雷故事都算），以及一個為下週立下的明確目標。">No lecture hall and no fixed syllabus, in the spirit of Founders Inc. Each Saturday brings a flight mentor, a public founder update where hits, misses and failure stories all count, and a single committed goal for the week ahead.</p>
+
+  <div class="tl">
+    <div class="tlrow rv">
+      <div class="tlweek"><span class="wn">Week 1</span><span class="wd">Aug 15 · Sat</span></div>
+      <div class="tlbody">
+        <h4 data-en="Frame the real problem" data-zh="定義真正的問題">Frame the real problem</h4>
+        <p data-en="Kick off with a flight mentor. Cut the project down to the one job your first users actually hire it for, and commit to a single goal for the week." data-zh="與飛行導師一起開場。把專案收斂到第一批用戶真正僱用它去做的那一件事，並為這一週定下單一目標。">Kick off with a flight mentor. Cut the project down to the one job your first users actually hire it for, and commit to a single goal for the week.</p>
+        <span class="tltag" data-en="Flight mentor + founder update" data-zh="飛行導師 ＋ 創辦人進度">Flight mentor + founder update</span>
+      </div>
+    </div>
+    <div class="tlrow rv">
+      <div class="tlweek"><span class="wn">Week 2</span><span class="wd">Aug 22 · Sat</span></div>
+      <div class="tlbody">
+        <h4 data-en="Build the evidence" data-zh="累積證據">Build the evidence</h4>
+        <p data-en="Report last week's hits and misses in the open. A new flight mentor pressure-tests demand and feasibility, then you lock the next goal." data-zh="公開回報上週的成功與失敗。新的飛行導師會壓力測試需求與可行性，接著你鎖定下一個目標。">Report last week's hits and misses in the open. A new flight mentor pressure-tests demand and feasibility, then you lock the next goal.</p>
+        <span class="tltag" data-en="Flight mentor + founder update" data-zh="飛行導師 ＋ 創辦人進度">Flight mentor + founder update</span>
+      </div>
+    </div>
+    <div class="tlrow rv">
+      <div class="tlweek"><span class="wn">Week 3</span><span class="wd">Aug 29 · Sat</span></div>
+      <div class="tlbody">
+        <h4 data-en="Sharpen the story" data-zh="磨利敘事">Sharpen the story</h4>
+        <p data-en="Turn traction into a narrative an investor believes. A flight mentor stress-tests the pitch and the numbers behind it." data-zh="把牽引力變成投資人會相信的敘事。飛行導師會壓力測試你的 pitch 與背後的數字。">Turn traction into a narrative an investor believes. A flight mentor stress-tests the pitch and the numbers behind it.</p>
+        <span class="tltag" data-en="Flight mentor + founder update" data-zh="飛行導師 ＋ 創辦人進度">Flight mentor + founder update</span>
+      </div>
+    </div>
+    <div class="tlrow rv">
+      <div class="tlweek"><span class="wn">Week 4</span><span class="wd">Sep 5 · Sat</span></div>
+      <div class="tlbody">
+        <h4 data-en="Dress rehearsal" data-zh="正式彩排">Dress rehearsal</h4>
+        <p data-en="Full run-through in front of the final-week judge. Every project gets a Deal Lens read before it steps on stage." data-zh="在最終週評審面前完整走一遍。每個專案上台前都會拿到一份 Deal Lens 評估。">Full run-through in front of the final-week judge. Every project gets a Deal Lens read before it steps on stage.</p>
+        <span class="tltag" data-en="Final judge + Deal Lens read" data-zh="最終評審 ＋ Deal Lens 評估">Final judge + Deal Lens read</span>
+      </div>
+    </div>
+    <div class="tlrow demorow rv">
+      <div class="tlweek"><span class="wn">Demo</span><span class="wd">Sep 9 · Tue</span></div>
+      <div class="tlbody">
+        <h4 data-en="Demo Day at the BobaTech Summit" data-zh="登上 BobaTech Summit 的 Demo Day">Demo Day at the BobaTech Summit</h4>
+        <p data-en="Graduate on the biggest stage available: pitch at the BobaTech Summit, Asia's first Gen Z founder summit." data-zh="在最大的舞台上畢業：登上亞洲首場 Gen Z 創辦人高峰會 BobaTech Summit pitch。">Graduate on the biggest stage available: pitch at the BobaTech Summit, Asia's first Gen Z founder summit.</p>
+        <span class="tltag" data-en="The exit stage" data-zh="出海口舞台">The exit stage</span>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- MENTORS -->
+<section id="mentors" class="sec-cream"><div class="wrap">
+  <div class="kick" data-en="The Mentors" data-zh="導師陣容">The Mentors</div>
+  <h2 class="rv" data-en="Operators and investors who have done it, <span class='hl'>in the room with you.</span>" data-zh="做過這一切的營運者與投資人，<span class='hl'>和你在同一個房間裡。</span>">Operators and investors who have done it, <span class="hl">in the room with you.</span></h2>
+  <p class="lead rv" data-en="A rotating bench of flight mentors and judges. Founders who have raised, and investors who write the checks." data-zh="一組輪替的飛行導師與評審：募過資的創辦人，以及真正開支票的投資人。">A rotating bench of flight mentors and judges. Founders who have raised, and investors who write the checks.</p>
+
+  <div class="band rv">
+    <img src="assets/img/panel-qa.webp" alt="" data-en-alt="A founder panel taking questions from the audience at StarWorks" data-zh-alt="炙星 StarWorks 的創辦人 panel 正在回答聽眾提問" />
+    <div class="band-in">
+      <h3 data-en="Real founders and investors, taking your questions face to face." data-zh="真實的創辦人與投資人，當面回答你的提問。">Real founders and investors, taking your questions face to face.</h3>
+      <p data-en="Every Saturday puts you in front of someone who has already walked the path." data-zh="每個週六，你面前都是一位已經走過這條路的人。">Every Saturday puts you in front of someone who has already walked the path.</p>
+    </div>
+  </div>
+
+  <div class="mentors">
+    <div class="mcard rv">
+      <div class="headshot" aria-hidden="true">DD</div>
+      <div class="mn" data-en="David Day" data-zh="David Day">David Day</div>
+      <div class="mr" data-en="Founder, LunaBill" data-zh="LunaBill 創辦人">Founder, LunaBill</div>
+      <div class="mo" data-en="YC F25 · Formosa Founders House" data-zh="YC F25 · Formosa Founders House">YC F25 · Formosa Founders House</div>
+    </div>
+    <div class="mcard rv">
+      <div class="headshot" aria-hidden="true">CJ</div>
+      <div class="mn" data-en="Cjin Cheng (CJ)" data-zh="Cjin Cheng（CJ）">Cjin Cheng (CJ)</div>
+      <div class="mr" data-en="Venture Partner, 500 Global" data-zh="500 Global 創投合夥人">Venture Partner, 500 Global</div>
+      <div class="mo" data-en="Tonic Fund" data-zh="Tonic Fund">Tonic Fund</div>
+    </div>
+    <div class="mcard rv">
+      <div class="headshot" aria-hidden="true">SI</div>
+      <div class="mn" data-en="Sing" data-zh="張歆浤 Sing">Sing</div>
+      <div class="mr" data-en="StarWorks" data-zh="炙星 StarWorks">StarWorks</div>
+      <div class="mo" data-en="Space &amp; capital" data-zh="空間與資本">Space &amp; capital</div>
+    </div>
+    <div class="mcard rv">
+      <div class="headshot" aria-hidden="true">JY</div>
+      <div class="mn" data-en="Jimmy" data-zh="Jimmy">Jimmy</div>
+      <div class="mr" data-en="Final-week judge" data-zh="最終週評審">Final-week judge</div>
+      <div class="mo" data-en="Demo Day panel" data-zh="Demo Day 評審團">Demo Day panel</div>
+    </div>
+  </div>
+  <p class="moreline rv" data-en="Plus rotating flight mentors joining each week. More names announced as Batch 1 forms." data-zh="還有每週加入的輪替飛行導師。更多名單將隨第一期成形陸續公布。">Plus rotating flight mentors joining each week. More names announced as Batch 1 forms.</p>
+</div></section>
+
+<!-- LIFE / COMMUNITY -->
+<section id="life" class="sec-paper"><div class="wrap">
+  <div class="gallery-head">
+    <div>
+      <div class="kick" data-en="The Community" data-zh="社群">The Community</div>
+      <h2 class="rv" data-en="You are walking into <span class='hl'>a living founder community.</span>" data-zh="你即將走進的，是<span class='hl'>一個活著的創辦人社群。</span>">You are walking into <span class="hl">a living founder community.</span></h2>
+    </div>
+  </div>
+  <p class="lead rv" data-en="The Fellowship runs inside the StarWorks founder community: mixers, dinners, campus chapters and off-site adventures between the Saturdays. Scenes below are from recent community gatherings." data-zh="Fellowship 就在炙星 StarWorks 的創辦人社群裡運作：週六之間，還有 mixer、聚餐、校園社群與揪團出去玩。以下畫面來自近期的社群聚會。">The Fellowship runs inside the StarWorks founder community: mixers, dinners, campus chapters and off-site adventures between the Saturdays. Scenes below are from recent community gatherings.</p>
+
+  <div class="marquee rv" aria-hidden="false">
+    <div class="mtrack">
+      <div class="gcard"><img src="assets/img/community-group.webp" alt="" data-en-alt="The whole founder community together" data-zh-alt="整個創辦人社群的大合照" /><span class="gcap" data-en="The whole batch" data-zh="整梯的人">The whole batch</span></div>
+      <div class="gcard"><img src="assets/img/dinner.webp" alt="" data-en-alt="Founders sharing a meal" data-zh-alt="創辦人一起吃飯" /><span class="gcap" data-en="Founder dinners" data-zh="創辦人聚餐">Founder dinners</span></div>
+      <div class="gcard"><img src="assets/img/ases-mixer.webp" alt="" data-en-alt="A founder mixer with a live pitch" data-zh-alt="創辦人 mixer 現場 pitch" /><span class="gcap" data-en="Founder mixers" data-zh="創辦人 mixer">Founder mixers</span></div>
+      <div class="gcard"><img src="assets/img/prawn.webp" alt="" data-en-alt="Founders on an off-site outing" data-zh-alt="創辦人揪團出去玩" /><span class="gcap" data-en="Off-site adventures" data-zh="揪團出去玩">Off-site adventures</span></div>
+      <div class="gcard"><img src="assets/img/panel-qa.webp" alt="" data-en-alt="A community fireside panel" data-zh-alt="社群爐邊 panel" /><span class="gcap" data-en="Fireside panels" data-zh="爐邊對談">Fireside panels</span></div>
+      <div class="gcard" aria-hidden="true"><img src="assets/img/community-group.webp" alt="" /><span class="gcap" data-en="The whole batch" data-zh="整梯的人">The whole batch</span></div>
+      <div class="gcard" aria-hidden="true"><img src="assets/img/dinner.webp" alt="" /><span class="gcap" data-en="Founder dinners" data-zh="創辦人聚餐">Founder dinners</span></div>
+      <div class="gcard" aria-hidden="true"><img src="assets/img/ases-mixer.webp" alt="" /><span class="gcap" data-en="Founder mixers" data-zh="創辦人 mixer">Founder mixers</span></div>
+      <div class="gcard" aria-hidden="true"><img src="assets/img/prawn.webp" alt="" /><span class="gcap" data-en="Off-site adventures" data-zh="揪團出去玩">Off-site adventures</span></div>
+      <div class="gcard" aria-hidden="true"><img src="assets/img/panel-qa.webp" alt="" /><span class="gcap" data-en="Fireside panels" data-zh="爐邊對談">Fireside panels</span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ECOSYSTEM -->
+<section id="ecosystem" class="sec-cream"><div class="wrap">
+  <div class="kick" data-en="The Ecosystem" data-zh="生態系">The Ecosystem</div>
+  <h2 class="rv" data-en="Three forces behind <span class='hl'>every founder in the room.</span>" data-zh="房間裡每位創辦人背後，<span class='hl'>有三股力量。</span>">Three forces behind <span class="hl">every founder in the room.</span></h2>
+  <p class="lead rv" data-en="The Fellowship is not one org. It is a coalition: a space-and-capital partner, a living founder community, and a program with a real evaluation engine." data-zh="Fellowship 不是單一機構，而是一個聯盟：一位提供空間與資本的夥伴、一個活躍的創辦人社群，以及一套帶有真實評估引擎的計畫。">The Fellowship is not one org. It is a coalition: a space-and-capital partner, a living founder community, and a program with a real evaluation engine.</p>
+
+  <div class="eco">
+    <div class="econode rv">
+      <div class="en-ic"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/></svg></div>
+      <h4 data-en="StarWorks" data-zh="炙星 StarWorks">StarWorks</h4>
+      <div class="en-role" data-en="Space &amp; capital" data-zh="空間與資本">Space &amp; capital</div>
+      <p data-en="The venue, the runway and the early checks. A physical home base and the capital to keep building." data-zh="場地、跑道與早期支票。一個實體基地，加上讓你持續打造產品的資本。">The venue, the runway and the early checks. A physical home base and the capital to keep building.</p>
+    </div>
+    <div class="ecox" aria-hidden="true">&times;</div>
+    <div class="econode rv">
+      <div class="en-ic"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="10" r="2.6"/><path d="M3 20c0-3.3 2.7-5 6-5s6 1.7 6 5"/><path d="M15 20c0-2.2 1.4-3.6 3.4-3.6S22 17.8 22 20"/></svg></div>
+      <h4 data-en="Founder community" data-zh="創辦人社群">Founder community</h4>
+      <div class="en-role" data-en="The peers" data-zh="同儕">The peers</div>
+      <p data-en="The people building alongside you: peers, alumni and flight mentors who show up week after week." data-zh="和你並肩打造產品的人：同儕、校友，以及一週又一週準時出現的飛行導師。">The people building alongside you: peers, alumni and flight mentors who show up week after week.</p>
+    </div>
+    <div class="ecox" aria-hidden="true">&times;</div>
+    <div class="econode rv">
+      <div class="en-ic"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></div>
+      <h4 data-en="Vincent" data-zh="Vincent">Vincent</h4>
+      <div class="en-role" data-en="Program &amp; Deal Lens" data-zh="計畫與 Deal Lens">Program &amp; Deal Lens</div>
+      <p data-en="Runs the four-week program and reads every project through the Deal Lens D/F/V evaluation engine." data-zh="主導這套四週計畫，並用 Deal Lens 的 D/F/V 評估引擎檢視每一個專案。">Runs the four-week program and reads every project through the Deal Lens D/F/V evaluation engine.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- DEMO DAY / EXIT -->
+<section id="demoday" class="sec-paper"><div class="wrap">
+  <div class="kick" data-en="The Exit" data-zh="出海口">The Exit</div>
+  <h2 class="rv" data-en="You graduate onto <span class='hl'>the BobaTech Summit stage.</span>" data-zh="你在 <span class='hl'>BobaTech Summit 的舞台上畢業。</span>">You graduate onto <span class="hl">the BobaTech Summit stage.</span></h2>
+
+  <div class="band rv">
+    <img src="assets/img/ases-mixer.webp" alt="" data-en-alt="A founder pitching on stage at a Stanford ASES Taiwan mixer" data-zh-alt="創辦人在 Stanford ASES Taiwan mixer 上台 pitch" />
+    <div class="band-in">
+      <h3 data-en="Four weeks of work, one pitch, in front of the region's founders." data-zh="四週的心血，一場 pitch，站在全區創辦人面前。">Four weeks of work, one pitch, in front of the region's founders.</h3>
+    </div>
+  </div>
+
+  <div class="exit-card rv">
+    <div class="goldkick" data-en="Demo Day · Sep 9–10" data-zh="Demo Day · 9 月 9 至 10 日">Demo Day · Sep 9&ndash;10</div>
+    <h3 data-en="Graduate onto Asia's first Gen Z founder summit." data-zh="在亞洲首場 <span class='hl'>Gen Z 創辦人高峰會</span>上畢業。">Graduate onto Asia's first Gen Z founder summit.</h3>
+    <p data-en="The Fellowship graduates onto the BobaTech Summit, hosted by Stanford ASES Taiwan. It is the biggest Gen Z founder stage in the region, and it is where you take the mic." data-zh="Fellowship 的畢業舞台就是 BobaTech Summit，由 Stanford ASES Taiwan 主辦。這是本地區最大的 Gen Z 創辦人舞台，也是你拿起麥克風的地方。">The Fellowship graduates onto the BobaTech Summit, hosted by Stanford ASES Taiwan. It is the biggest Gen Z founder stage in the region, and it is where you take the mic.</p>
+
+    <div class="highlights">
+      <div class="hl-card">
+        <span class="hlk" data-en="Host" data-zh="主辦">Host</span>
+        <span class="hlv" data-en="Stanford ASES Taiwan" data-zh="Stanford ASES Taiwan">Stanford ASES Taiwan</span>
+        <span class="hld" data-en="The student-founder network behind the summit." data-zh="高峰會背後的學生創辦人網絡。">The student-founder network behind the summit.</span>
+      </div>
+      <div class="hl-card">
+        <span class="hlk" data-en="The stage" data-zh="舞台">The stage</span>
+        <span class="hlv" data-en="Asia's first Gen Z summit" data-zh="亞洲首場 Gen Z 高峰會">Asia's first Gen Z summit</span>
+        <span class="hld" data-en="The biggest young-founder stage in the region." data-zh="本地區最大的年輕創辦人舞台。">The biggest young-founder stage in the region.</span>
+      </div>
+      <div class="hl-card">
+        <span class="hlk" data-en="On the mic" data-zh="麥克風上">On the mic</span>
+        <span class="hlv" data-en="Kevin Lin · K.S. Pua" data-zh="Kevin Lin · 潘健成">Kevin Lin · K.S. Pua</span>
+        <span class="hld" data-en="Twitch co-founder and Phison founder among the speakers." data-zh="講者包括 Twitch 共同創辦人與群聯創辦人。">Twitch co-founder and Phison founder among the speakers.</span>
+      </div>
+      <div class="hl-card">
+        <span class="hlk" data-en="You" data-zh="你">You</span>
+        <span class="hlv" data-en="A graduating pitch" data-zh="畢業 pitch">A graduating pitch</span>
+        <span class="hld" data-en="Four weeks of work, distilled into your moment on stage." data-zh="四週的心血，凝聚成你上台的那一刻。">Four weeks of work, distilled into your moment on stage.</span>
+      </div>
+    </div>
+
+    <div class="speakers">
+      <span class="spk"><span class="sdot"></span><span class="sname" data-en="Kevin Lin" data-zh="Kevin Lin">Kevin Lin</span><span class="srole" data-en="Twitch co-founder" data-zh="Twitch 共同創辦人">Twitch co-founder</span></span>
+      <span class="spk"><span class="sdot"></span><span class="sname" data-en="K.S. Pua" data-zh="潘健成">K.S. Pua</span><span class="srole" data-en="Phison founder" data-zh="群聯創辦人">Phison founder</span></span>
+    </div>
+
+    <div class="exit-meta">
+      <span data-en="Host · Stanford ASES Taiwan" data-zh="主辦 · Stanford ASES Taiwan">Host · Stanford ASES Taiwan</span>
+      <span data-en="Asia's first Gen Z summit" data-zh="亞洲首場 Gen Z 高峰會">Asia's first Gen Z summit</span>
+    </div>
+  </div>
+</div></section>
+
+<!-- FAQ -->
+<section id="faq" class="sec-cream"><div class="wrap">
+  <div class="kick" data-en="FAQ" data-zh="常見問題">FAQ</div>
+  <h2 class="rv" data-en="Questions before you apply." data-zh="申請前，你可能想問的。">Questions before you apply.</h2>
+  <div class="faq rv">
+    <details open>
+      <summary><span data-en="Who is the Fellowship for?" data-zh="Fellowship 適合什麼樣的人？">Who is the Fellowship for?</span><span class="fx" aria-hidden="true"></span></summary>
+      <div class="fa" data-en="Builders who are already shipping something real: a prototype, early users or working code, and who want to make the leap to founder. We back talent over credentials, so the school, title or network on your CV is not what we screen on." data-zh="已經在動手做的 builder：有原型、早期用戶或真實的程式碼，並想跨出成為 founder 的那一步。我們看才華而非履歷，所以你 CV 上的學校、頭銜或人脈不是我們篩選的標準。">Builders who are already shipping something real: a prototype, early users or working code, and who want to make the leap to founder. We back talent over credentials, so the school, title or network on your CV is not what we screen on.</div>
+    </details>
+    <details>
+      <summary><span data-en="How long is it, and when does Batch 1 run?" data-zh="計畫多長？第一期什麼時候開始？">How long is it, and when does Batch 1 run?</span><span class="fx" aria-hidden="true"></span></summary>
+      <div class="fa" data-en="Four weeks. Batch 1 meets on four Saturdays: Aug 15, Aug 22, Aug 29 and Sep 5, then graduates at Demo Day on Sep 9 at the BobaTech Summit." data-zh="四週。第一期在四個週六聚會：8 月 15 日、8 月 22 日、8 月 29 日與 9 月 5 日，接著在 9 月 9 日的 BobaTech Summit Demo Day 畢業。">Four weeks. Batch 1 meets on four Saturdays: Aug 15, Aug 22, Aug 29 and Sep 5, then graduates at Demo Day on Sep 9 at the BobaTech Summit.</div>
+    </details>
+    <details>
+      <summary><span data-en="Is there a fixed curriculum?" data-zh="有固定課綱嗎？">Is there a fixed curriculum?</span><span class="fx" aria-hidden="true"></span></summary>
+      <div class="fa" data-en="No. In the spirit of Founders Inc, there is no set syllabus. Each week pairs you with a flight mentor and pushes your one real project forward, measured by an honest founder update and a single goal for the next week." data-zh="沒有。精神取自 Founders Inc，這裡沒有固定課綱。每一週都替你配一位飛行導師，把你手上那個真實專案往前推，並以一則誠實的創辦人進度與一個下週目標來衡量。">No. In the spirit of Founders Inc, there is no set syllabus. Each week pairs you with a flight mentor and pushes your one real project forward, measured by an honest founder update and a single goal for the next week.</div>
+    </details>
+    <details>
+      <summary><span data-en="What is the Deal Lens evaluation?" data-zh="Deal Lens 評估是什麼？">What is the Deal Lens evaluation?</span><span class="fx" aria-hidden="true"></span></summary>
+      <div class="fa" data-en="Deal Lens is the D/F/V framework we use to read every project: Desirability (does anyone want it), Feasibility (can you build it), Viability (does it compound). Before Demo Day, every founder gets an investor-grade read on where they stand." data-zh="Deal Lens 是我們檢視每個專案的 D/F/V 架構：Desirability（有沒有人要）、Feasibility（你能不能做出來）、Viability（能不能持續複利）。在 Demo Day 之前，每位創辦人都會拿到一份投資人等級的定位評估。">Deal Lens is the D/F/V framework we use to read every project: Desirability (does anyone want it), Feasibility (can you build it), Viability (does it compound). Before Demo Day, every founder gets an investor-grade read on where they stand.</div>
+    </details>
+    <details>
+      <summary><span data-en="Where does Demo Day happen?" data-zh="Demo Day 在哪裡舉行？">Where does Demo Day happen?</span><span class="fx" aria-hidden="true"></span></summary>
+      <div class="fa" data-en="On the BobaTech Summit stage, Sep 9. The summit is hosted by Stanford ASES Taiwan and is Asia's first Gen Z founder summit, with speakers including Kevin Lin (Twitch co-founder) and K.S. Pua (Phison founder)." data-zh="9 月 9 日，登上 BobaTech Summit 的舞台。這場高峰會由 Stanford ASES Taiwan 主辦，是亞洲首場 Gen Z 創辦人高峰會，講者包括 Kevin Lin（Twitch 共同創辦人）與潘健成（群聯創辦人）。">On the BobaTech Summit stage, Sep 9. The summit is hosted by Stanford ASES Taiwan and is Asia's first Gen Z founder summit, with speakers including Kevin Lin (Twitch co-founder) and K.S. Pua (Phison founder).</div>
+    </details>
+    <details>
+      <summary><span data-en="How do I apply?" data-zh="我要怎麼申請？">How do I apply?</span><span class="fx" aria-hidden="true"></span></summary>
+      <div class="fa" data-en="Hit any Apply button on this page and tell us what you are building. Batch 1 is forming now and reviewed on a rolling basis, so earlier applications get earlier decisions." data-zh="點擊本頁任一個 Apply 按鈕，告訴我們你正在做什麼。第一期正在成形，並以滾動制審核，越早申請越早得到結果。">Hit any Apply button on this page and tell us what you are building. Batch 1 is forming now and reviewed on a rolling basis, so earlier applications get earlier decisions.</div>
+    </details>
+  </div>
+</div></section>
+
+<!-- APPLY -->
+<section id="apply" class="applysec"><div class="wrap">
+  <div class="apply-box rv">
+    <div class="kick" style="justify-content:center" data-en="Batch 1 is forming" data-zh="第一期招募中">Batch 1 is forming</div>
+    <h2 data-en="Four weeks from builder to founder. <span class='hl'>Starts Aug 15.</span>" data-zh="四週，從 builder 到 founder。<span class='hl'>8 月 15 日開課。</span>">Four weeks from builder to founder. <span class="hl">Starts Aug 15.</span></h2>
+    <p class="lead" data-en="If you are already building, we want to be your first believer. Applications for Batch 1 are open and reviewed on a rolling basis." data-zh="如果你已經在動手做，我們想成為你的第一個相信者。第一期申請已開放，並以滾動制審核。">If you are already building, we want to be your first believer. Applications for Batch 1 are open and reviewed on a rolling basis.</p>
+    <div class="cta-row">
+      <button class="btn btn-primary" onclick="openApply()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        <span data-en="Apply now" data-zh="立即申請">Apply now</span>
+      </button>
+    </div>
+    <div class="apply-note" data-en="Rolling basis · we reply to every application." data-zh="滾動審核 · 每一封申請我們都會回覆。">Rolling basis · we reply to every application.</div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div class="footin">
+    <div>
+      <div class="fbrand">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="9" fill="none" stroke="#FF7A45" stroke-width="2.4"/><circle cx="16" cy="16" r="3.4" fill="#FF7A45"/><circle cx="24.5" cy="9.5" r="2.6" fill="#0FA79B"/></svg>
+        <span>THE FELLOWSHIP</span>
+      </div>
+      <p style="margin-top:12px;color:#a89a8c;max-width:26em;font-size:1.02rem" data-en="An invisible college for builders. StarWorks × the founder community × Vincent." data-zh="一所給 builder 的隱形大學。炙星 StarWorks × 創辦人社群 × Vincent。">An invisible college for builders. StarWorks × the founder community × Vincent.</p>
+    </div>
+    <div class="footlinks">
+      <a href="#mission" data-en="Mission" data-zh="使命">Mission</a>
+      <a href="#how" data-en="How it works" data-zh="運作方式">How it works</a>
+      <a href="#mentors" data-en="Mentors" data-zh="導師">Mentors</a>
+      <a href="#demoday" data-en="Demo Day" data-zh="Demo Day">Demo Day</a>
+      <a href="#apply" onclick="openApply();return false;" data-en="Apply" data-zh="申請">Apply</a>
+    </div>
+  </div>
+  <div class="footcopy" data-en="© 2026 The Fellowship · Batch 1 · Starts Aug 15 · Demo Day at the BobaTech Summit" data-zh="© 2026 The Fellowship · 第一期 · 8 月 15 日開課 · Demo Day 在 BobaTech Summit">© 2026 The Fellowship · Batch 1 · Starts Aug 15 · Demo Day at the BobaTech Summit</div>
+</div></footer>
+
+<!-- APPLY MODAL -->
+<div class="modal" id="applyModal" role="dialog" aria-modal="true" data-en-aria="Apply to the Fellowship" data-zh-aria="申請 Fellowship">
+  <div class="modal-card">
+    <button class="mclose" onclick="closeApply()" data-en-aria="Close" data-zh-aria="關閉"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <h3 data-en="Apply for Batch 1" data-zh="申請第一期">Apply for Batch 1</h3>
+    <p class="msub" data-en="Tell us what you are building. We reply to every application." data-zh="告訴我們你正在做什麼。每一封申請我們都會回覆。">Tell us what you are building. We reply to every application.</p>
+    <form action="https://formsubmit.co/new.vincent21@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Fellowship Batch 1 application" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_next" value="https://vincentt-wang.github.io/fellowship/?applied=1" />
+      <div class="field">
+        <label data-en="Your name" data-zh="你的名字">Your name</label>
+        <input type="text" name="name" required data-en-ph="e.g. Alex Chen" data-zh-ph="例如：陳小明" placeholder="e.g. Alex Chen" />
+      </div>
+      <div class="field">
+        <label data-en="Email" data-zh="Email">Email</label>
+        <input type="email" name="email" required data-en-ph="you@email.com" data-zh-ph="you@email.com" placeholder="you@email.com" />
+      </div>
+      <div class="field">
+        <label data-en="What are you building?" data-zh="你正在做什麼？">What are you building?</label>
+        <textarea name="what_you_are_building" required data-en-ph="One or two lines: the project, and the one job your first users hire it for." data-zh-ph="一兩句話：你的專案，以及第一批用戶僱用它去做的那件事。" placeholder="One or two lines: the project, and the one job your first users hire it for."></textarea>
+      </div>
+      <div class="field">
+        <label data-en="A link (optional)" data-zh="一個連結（選填）">A link (optional)</label>
+        <input type="text" name="link" data-en-ph="Demo, repo, deck, portfolio or LinkedIn" data-zh-ph="Demo、repo、簡報、作品集或 LinkedIn" placeholder="Demo, repo, deck, portfolio or LinkedIn" />
+      </div>
+      <button type="submit" class="msubmit" data-en="Send application" data-zh="送出申請">Send application</button>
+      <div class="mfoot" data-en="Batch 1 · reviewed on a rolling basis" data-zh="第一期 · 滾動制審核">Batch 1 · reviewed on a rolling basis</div>
+    </form>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Who is the Fellowship for?","acceptedAnswer":{"@type":"Answer","text":"Builders who are already shipping a prototype, early users or real code and want to make the leap to founder. We back talent over credentials, so the school, title or network on your CV is not what we screen on."}},
+    {"@type":"Question","name":"How long is it, and when does Batch 1 run?","acceptedAnswer":{"@type":"Answer","text":"Four weeks. Batch 1 meets on four Saturdays: Aug 15, Aug 22, Aug 29 and Sep 5, then graduates at Demo Day on Sep 9 at the BobaTech Summit."}},
+    {"@type":"Question","name":"Is there a fixed curriculum?","acceptedAnswer":{"@type":"Answer","text":"No. In the spirit of Founders Inc, there is no set syllabus. Each week pairs you with a flight mentor and pushes your one real project forward, measured by an honest founder update and a single goal for the next week."}},
+    {"@type":"Question","name":"What is the Deal Lens evaluation?","acceptedAnswer":{"@type":"Answer","text":"Deal Lens is the D/F/V framework we use to read every project: Desirability, Feasibility and Viability. Before Demo Day, every founder gets an investor-grade read on where they stand."}},
+    {"@type":"Question","name":"Where does Demo Day happen?","acceptedAnswer":{"@type":"Answer","text":"On the BobaTech Summit stage on Sep 9. The summit is hosted by Stanford ASES Taiwan and is Asia's first Gen Z founder summit, with speakers including Kevin Lin, Twitch co-founder, and K.S. Pua, Phison founder."}},
+    {"@type":"Question","name":"How do I apply?","acceptedAnswer":{"@type":"Answer","text":"Hit any Apply button on this page and tell us what you are building. Batch 1 is forming now and reviewed on a rolling basis, so earlier applications get earlier decisions."}}
+  ]
+}
+</script>
+
+<script>
+/* ── BILINGUAL ENGINE (default EN) ─────────────────────────── */
+var lang=new URLSearchParams(location.search).get('lang')||localStorage.getItem('fellow_lang')||'en';
+function applyLang(l){
+  lang=(l==='zh')?'zh':'en';
+  localStorage.setItem('fellow_lang',lang);
+  document.documentElement.lang=lang==='zh'?'zh-TW':'en';
+  document.querySelectorAll('[data-en][data-zh]').forEach(function(el){
+    el.innerHTML=lang==='zh'?el.getAttribute('data-zh'):el.getAttribute('data-en');
+  });
+  document.querySelectorAll('[data-en-ph][data-zh-ph]').forEach(function(el){
+    el.placeholder=lang==='zh'?el.getAttribute('data-zh-ph'):el.getAttribute('data-en-ph');
+  });
+  document.querySelectorAll('[data-en-alt][data-zh-alt]').forEach(function(el){
+    el.alt=lang==='zh'?el.getAttribute('data-zh-alt'):el.getAttribute('data-en-alt');
+  });
+  document.querySelectorAll('[data-en-aria][data-zh-aria]').forEach(function(el){
+    el.setAttribute('aria-label',lang==='zh'?el.getAttribute('data-zh-aria'):el.getAttribute('data-en-aria'));
+  });
+  var be=document.getElementById('langEn'),bz=document.getElementById('langZh');
+  if(be)be.classList.toggle('on',lang==='en');
+  if(bz)bz.classList.toggle('on',lang==='zh');
+}
+applyLang(lang);
+
+/* ── LIVE COUNTDOWN ────────────────────────────────────────── */
+var CD_TXT={en:{live:'Batch 1 is in session',note:'until Batch 1 begins · Aug 15'},
+            zh:{live:'第一期進行中',note:'距離第一期開課 · 8 月 15 日'}};
+function pad(n){return (n<10?'0':'')+n;}
+(function countdown(){
+  var start=new Date('2026-08-15T08:00:00+08:00').getTime();
+  function tick(){
+    var diff=start-Date.now();
+    var note=document.getElementById('cdnote');
+    if(diff<=0){
+      var t=CD_TXT[lang].live;
+      var cd=document.getElementById('countdown');
+      if(cd)cd.innerHTML='<div class="cdunit" style="min-width:auto;padding:14px 22px"><span class="cdnum" style="font-size:clamp(1.3rem,3vw,1.8rem)">'+t+'</span></div>';
+      if(note){note.setAttribute('data-en',CD_TXT.en.live);note.setAttribute('data-zh',CD_TXT.zh.live);note.innerHTML=t;}
+      return;
+    }
+    var d=Math.floor(diff/86400000);
+    var h=Math.floor(diff%86400000/3600000);
+    var m=Math.floor(diff%3600000/60000);
+    var s=Math.floor(diff%60000/1000);
+    var eD=document.getElementById('cdD');if(eD)eD.textContent=d;
+    var eH=document.getElementById('cdH');if(eH)eH.textContent=pad(h);
+    var eM=document.getElementById('cdM');if(eM)eM.textContent=pad(m);
+    var eS=document.getElementById('cdS');if(eS)eS.textContent=pad(s);
+  }
+  tick();setInterval(tick,1000);
+})();
+
+/* ── APPLY MODAL ───────────────────────────────────────────── */
+var _lastFocus=null;
+function openApply(){
+  var m=document.getElementById('applyModal');if(!m)return;
+  _lastFocus=document.activeElement;
+  m.classList.add('open');
+  document.body.style.overflow='hidden';
+  var f=m.querySelector('input,textarea');if(f)f.focus();
+}
+function closeApply(){
+  var m=document.getElementById('applyModal');if(!m)return;
+  m.classList.remove('open');
+  document.body.style.overflow='';
+  if(_lastFocus&&_lastFocus.focus)_lastFocus.focus();
+}
+document.getElementById('applyModal').addEventListener('click',function(e){
+  if(e.target===this)closeApply();
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape')closeApply();
+});
+/* open modal automatically after a successful FormSubmit redirect */
+if(new URLSearchParams(location.search).get('applied')==='1'){
+  history.replaceState(null,'',location.pathname);
+}
+
+/* ── SCROLL REVEAL ─────────────────────────────────────────── */
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+    els.forEach(function(e){e.classList.add('in');});return;
+  }
+  var io=new IntersectionObserver(function(en){
+    en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:0,rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e);});
+})();
+
+/* ── HERO PARALLAX (subtle, motion-safe) ───────────────────── */
+(function(){
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  var img=document.getElementById('heroImg');if(!img)return;
+  var ticking=false;
+  function upd(){
+    var y=window.scrollY||0;
+    var off=Math.min(y*0.16,120);
+    img.style.transform='translateY('+off+'px)';
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){
+    if(!ticking){requestAnimationFrame(upd);ticking=true;}
+  },{passive:true});
+  upd();
+})();
+</script>
+</body>
+</html>
