@@ -4,13 +4,13 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>The Fellowship · Where builders become founders in 4 weeks</title>
-<meta name="description" content="A 4-week founder fellowship inside the StarWorks community. Invisible-college model: we back you before the capital markets do. Batch 1 starts Aug 15, Demo Day at the BobaTech Summit." />
+<meta name="description" content="A 4-week founder program hosted by StarWorks. The invisible-college model: back talented builders at the earliest stage, before the capital markets do. Batch 1 forms by invitation and graduates at the BobaTech Summit." />
 <link rel="alternate" hreflang="en" href="./" />
 <link rel="alternate" hreflang="zh-TW" href="./?lang=zh" />
 <meta property="og:title" content="The Fellowship · Where builders become founders in 4 weeks" />
-<meta property="og:description" content="An invisible college for builders. StarWorks × the founder community × Vincent. Batch 1 starts Aug 15." />
+<meta property="og:description" content="A 4-week founder program hosted by StarWorks. Backed early, graduating at the BobaTech Summit. Batch 1 forms by invitation." />
 <meta property="og:type" content="website" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FFF3E9'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%23FF5A3C' stroke-width='2.4'/%3E%3Ccircle cx='16' cy='16' r='3.4' fill='%23FF6600'/%3E%3Ccircle cx='24.5' cy='9.5' r='2.6' fill='%230FA79B'/%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='8'%20fill='%23FFF3E9'/%3E%3Cpath%20d='M26.5%2010A11%2011%200%201%200%2027.5%2019'%20fill='none'%20stroke='%23FF5A3C'%20stroke-width='2.6'%20stroke-linecap='round'/%3E%3Cpath%20d='M16%208.2l1.8%205%205%201.8-5%201.8-1.8%205-1.8-5-5-1.8%205-1.8z'%20fill='%23FF6600'/%3E%3Ccircle%20cx='26.8'%20cy='9.4'%20r='2.3'%20fill='%230FA79B'/%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
 <style>
@@ -253,6 +253,27 @@ footer{padding:52px 0 60px;background:var(--ink);color:#cdbcae;font-size:1.02rem
 .msubmit:hover{transform:translateY(-2px);box-shadow:0 14px 34px -12px rgba(255,90,60,.65)}
 .mfoot{margin-top:14px;font-family:var(--mono);font-size:1rem;color:var(--ink-dim);text-align:center}
 
+/* TOAST */
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);z-index:120;display:flex;align-items:center;gap:11px;max-width:92vw;padding:14px 22px;border-radius:14px;background:var(--ink);color:#fff;box-shadow:0 20px 50px -18px rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:opacity .35s var(--ease),transform .35s var(--ease)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto}
+.toast .tico{width:24px;height:24px;border-radius:50%;flex:none;display:grid;place-items:center;background:var(--grad-warm)}
+.toast .tico svg{width:15px;height:15px;stroke:#fff;fill:none}
+.toast .tmsg{font-size:1.02rem;font-weight:600;color:#fff}
+
+/* PROVEN MODEL */
+.models{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+@media(max-width:860px){.models{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.models{grid-template-columns:1fr}}
+.mdl{border:1px solid var(--line);border-radius:16px;background:var(--paper);padding:22px 22px;box-shadow:var(--card-sh);display:flex;flex-direction:column;gap:7px;min-height:210px;transition:.25s}
+.mdl:hover{transform:translateY(-4px);box-shadow:var(--card-sh-hover)}
+.mdl .mname{font-family:var(--font-disp);font-weight:700;font-size:1.2rem;color:var(--ink)}
+.mdl .mtag{font-family:var(--mono);font-size:1rem;color:var(--teal-deep);letter-spacing:.02em}
+.mdl .mstat{font-family:var(--font-disp);font-weight:700;font-size:1.42rem;background:var(--grad-title);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.14;margin-top:2px}
+.mdl p{font-size:1.02rem;color:var(--ink-soft);margin-top:auto;padding-top:8px}
+.mdl-note{margin-top:22px;border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:14px;background:var(--cream);padding:18px 24px;max-width:60em}
+.mdl-note b{color:var(--ink)}
+.mdl-src{margin-top:14px;font-size:1rem;color:var(--ink-dim)}
+
 /* reveal */
 .rv{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .rv.in{opacity:1;transform:none}
@@ -269,14 +290,14 @@ footer{padding:52px 0 60px;background:var(--ink);color:#cdbcae;font-size:1.02rem
 
 <nav><div class="navin">
   <div class="brand">
-    <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="9" fill="none" stroke="#FF5A3C" stroke-width="2.4"/><circle cx="16" cy="16" r="3.4" fill="#FF6600"/><circle cx="24.5" cy="9.5" r="2.6" fill="#0FA79B"/></svg>
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M26.5 10A11 11 0 1 0 27.5 19" fill="none" stroke="#FF5A3C" stroke-width="2.6" stroke-linecap="round"/><path d="M16 8.2l1.8 5 5 1.8-5 1.8-1.8 5-1.8-5-5-1.8 5-1.8z" fill="#FF6600"/><circle cx="26.8" cy="9.4" r="2.3" fill="#0FA79B"/></svg>
     <span data-en="THE FELLOWSHIP" data-zh="THE FELLOWSHIP">THE FELLOWSHIP</span>
   </div>
   <div class="navtabs">
     <a href="#mission" data-en="Mission" data-zh="使命">Mission</a>
+    <a href="#model" data-en="The model" data-zh="模式實證">The model</a>
     <a href="#how" data-en="How it works" data-zh="運作方式">How it works</a>
     <a href="#mentors" data-en="Mentors" data-zh="導師">Mentors</a>
-    <a href="#life" data-en="The community" data-zh="社群">The community</a>
     <a href="#demoday" data-en="Demo Day" data-zh="Demo Day">Demo Day</a>
     <a href="#faq" data-en="FAQ" data-zh="常見問題">FAQ</a>
   </div>
@@ -285,7 +306,7 @@ footer{padding:52px 0 60px;background:var(--ink);color:#cdbcae;font-size:1.02rem
       <button id="langEn" onclick="applyLang('en')">EN</button>
       <button id="langZh" onclick="applyLang('zh')">ZH</button>
     </div>
-    <button class="apply-pill" onclick="openApply()" data-en="Apply" data-zh="立即申請">Apply</button>
+    <button class="apply-pill" onclick="openApply()" data-en="Register interest" data-zh="登記興趣">Register interest</button>
   </div>
 </div></nav>
 
@@ -293,13 +314,13 @@ footer{padding:52px 0 60px;background:var(--ink);color:#cdbcae;font-size:1.02rem
 <header class="hero">
   <div class="hero-media"><img id="heroImg" src="assets/img/hero-circle.webp" alt="" data-en-alt="Founders gathered in a circle under the StarWorks ring lights" data-zh-alt="創辦人在炙星 StarWorks 的環形燈下圍坐" /></div>
   <div class="hero-in">
-    <span class="eyebrow" data-en="A 4-week founder fellowship" data-zh="為期四週的創辦人 Fellowship">A 4-week founder fellowship</span>
+    <span class="eyebrow" data-en="A 4-week founder program · hosted by StarWorks" data-zh="為期四週的創辦人養成 · 炙星 StarWorks 主辦">A 4-week founder program · hosted by StarWorks</span>
     <h1 data-en="Where builders become <span class='hl'>founders</span> in 4 weeks." data-zh="四週，讓 builder 成為 <span class='hl'>founder</span>。">Where builders become <span class="hl">founders</span> in 4 weeks.</h1>
-    <p class="sub" data-en="An invisible college for the ones already shipping. We become your first believer before the capital markets ever compete for you." data-zh="一所給正在動手做的人的隱形大學。在資本市場開始搶你之前，我們先成為你的第一個相信者。">An invisible college for the ones already shipping. We become your first believer before the capital markets ever compete for you.</p>
+    <p class="sub" data-en="An invisible college for the ones already shipping. We back talented builders at the earliest stage, before the capital markets ever compete for them." data-zh="一所給正在動手做的人的隱形大學。在資本市場開始搶人之前，我們就在最早期支持有才華的 builder。">An invisible college for the ones already shipping. We back talented builders at the earliest stage, before the capital markets ever compete for them.</p>
     <div class="cta-row">
       <button class="btn btn-primary" onclick="openApply()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        <span data-en="Apply for Batch 1" data-zh="申請第一期">Apply for Batch 1</span>
+        <span data-en="Register your interest" data-zh="登記興趣">Register your interest</span>
       </button>
       <a class="btn" href="#how">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M10 8l6 4-6 4z" fill="currentColor" stroke="none"/></svg>
@@ -315,7 +336,7 @@ footer{padding:52px 0 60px;background:var(--ink);color:#cdbcae;font-size:1.02rem
       <span class="cdsep">:</span>
       <div class="cdunit"><span class="cdnum" id="cdS">--</span><span class="cdlab" data-en="Sec" data-zh="秒">Sec</span></div>
     </div>
-    <div class="cdnote"><span class="dotpulse"></span><span id="cdnote" data-en="until Batch 1 begins · Aug 15" data-zh="距離第一期開課 · 8 月 15 日">until Batch 1 begins · Aug 15</span></div>
+    <div class="cdnote"><span class="dotpulse"></span><span id="cdnote" data-en="By invitation · Batch 1 begins Aug 15" data-zh="邀請制 · 第一期 8 月 15 日開課">By invitation · Batch 1 begins Aug 15</span></div>
   </div>
 </header>
 
@@ -323,11 +344,11 @@ footer{padding:52px 0 60px;background:var(--ink);color:#cdbcae;font-size:1.02rem
 <section id="mission" class="sec-cream"><div class="wrap">
   <div class="kick" data-en="The Mission" data-zh="使命">The Mission</div>
   <h2 class="rv" data-en="The invisible college backs you <span class='hl'>before anyone competes to.</span>" data-zh="在所有人開始搶你之前，<span class='hl'>隱形大學先押注你。</span>">The invisible college backs you <span class="hl">before anyone competes to.</span></h2>
-  <p class="lead rv" data-en="By the time a founder is fundable, everyone wants in. The Fellowship exists for the stage before that, when the work is real but the market has not noticed yet. We show up as the first believer, with room, capital, mentorship and a sharp evaluation lens, and we compound from there." data-zh="等到一位創辦人變得可投資時，人人都想擠進來。Fellowship 存在的意義，是那個更早的階段：作品已經真實，但市場還沒注意到。我們在這時成為第一個相信者，帶著空間、資本、導師與一套銳利的評估視角，從這裡一起複利成長。">By the time a founder is fundable, everyone wants in. The Fellowship exists for the stage before that, when the work is real but the market has not noticed yet. We show up as the first believer, with room, capital, mentorship and a sharp evaluation lens, and we compound from there.</p>
+  <p class="lead rv" data-en="By the time a founder is fundable, everyone wants in. The Fellowship exists for the stage before that, when the work is real but the market has not noticed yet. We show up at the earliest stage, with room, mentors, an honest evaluation lens and a stage at Demo Day, and we compound from there." data-zh="等到一位創辦人變得可投資時，人人都想擠進來。Fellowship 存在的意義，是那個更早的階段：作品已經真實，但市場還沒注意到。我們在最早期就進場，帶著空間、導師、一套誠實的評估視角，以及 Demo Day 的舞台，從這裡一起複利成長。">By the time a founder is fundable, everyone wants in. The Fellowship exists for the stage before that, when the work is real but the market has not noticed yet. We show up at the earliest stage, with room, mentors, an honest evaluation lens and a stage at Demo Day, and we compound from there.</p>
 
   <div class="credit rv">
     <div class="cl" data-en="Credit where it's due" data-zh="源流致敬">Credit where it's due</div>
-    <p data-en="The model borrows openly from Peter Thiel's Thiel Fellowship and the 1517 Fund's idea of an &ldquo;invisible college&rdquo;: back talented builders directly, outside the traditional gatekeepers, and be the first believer before the capital markets ever compete for them." data-zh="這套模式公開借鏡自 Peter Thiel 的 Thiel Fellowship 與 1517 Fund 提出的「隱形大學」概念：跳過傳統守門人，直接押注有才華的 builder，在資本市場開始搶他們之前，先成為第一個相信者。">The model borrows openly from Peter Thiel's Thiel Fellowship and the 1517 Fund's idea of an &ldquo;invisible college&rdquo;: back talented builders directly, outside the traditional gatekeepers, and be the first believer before the capital markets ever compete for them.</p>
+    <p data-en="The model borrows openly from Peter Thiel's Thiel Fellowship and the 1517 Fund's idea of an &ldquo;invisible college&rdquo;: back talented builders directly, outside the traditional gatekeepers, at the earliest stage of all." data-zh="這套模式公開借鏡自 Peter Thiel 的 Thiel Fellowship 與 1517 Fund 提出的「隱形大學」概念：跳過傳統守門人，在最早的階段就直接押注有才華的 builder。">The model borrows openly from Peter Thiel's Thiel Fellowship and the 1517 Fund's idea of an &ldquo;invisible college&rdquo;: back talented builders directly, outside the traditional gatekeepers, at the earliest stage of all.</p>
   </div>
 
   <div class="proof rv">
@@ -346,8 +367,8 @@ footer{padding:52px 0 60px;background:var(--ink);color:#cdbcae;font-size:1.02rem
     </div>
     <div class="pillar rv">
       <div class="pico"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/></svg></div>
-      <h4 data-en="First believer" data-zh="第一個相信者">First believer</h4>
-      <p data-en="We commit early, when belief is scarce and worth the most, not after the round is oversubscribed." data-zh="我們在早期就承諾，在相信最稀缺、最值錢的時候，而不是等到募資超額認購之後。">We commit early, when belief is scarce and worth the most, not after the round is oversubscribed.</p>
+      <h4 data-en="In early" data-zh="最早期就進場">In early</h4>
+      <p data-en="We get in early, when conviction is scarce and worth the most, long before the round is oversubscribed." data-zh="我們很早就進場，在信心最稀缺、最值錢的時候，遠早於募資超額認購之前。">We get in early, when conviction is scarce and worth the most, long before the round is oversubscribed.</p>
     </div>
     <div class="pillar rv">
       <div class="pico"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div>
@@ -362,11 +383,82 @@ footer{padding:52px 0 60px;background:var(--ink);color:#cdbcae;font-size:1.02rem
   </div>
 </div></section>
 
+<!-- PROVEN MODEL -->
+<section id="model" class="sec-paper"><div class="wrap">
+  <div class="kick" data-en="The Model" data-zh="模式實證">The Model</div>
+  <h2 class="rv" data-en="This model is not a bet. <span class='hl'>The best programs already proved it.</span>" data-zh="這套模式不是賭注。<span class='hl'>最好的計畫早就證明過了。</span>">This model is not a bet. <span class="hl">The best programs already proved it.</span></h2>
+  <p class="lead rv" data-en="Community first, capital early, selection by performance rather than a polished pitch. The numbers below are from the programs that built this playbook." data-zh="先有社群、資本進得早、用實際表現而不是漂亮的簡報來選人。以下數字，來自把這套做法跑出來的計畫。">Community first, capital early, selection by performance rather than a polished pitch. The numbers below are from the programs that built this playbook.</p>
+
+  <div class="models">
+    <div class="mdl rv">
+      <div class="mname" data-en="Founders Inc" data-zh="Founders Inc">Founders Inc</div>
+      <div class="mtag" data-en="San Francisco · invite-only campus" data-zh="舊金山 · 邀請制園區">San Francisco · invite-only campus</div>
+      <div class="mstat" data-en="$100–250K in, no pitch" data-zh="投 10 至 25 萬美元，不做 pitch">$100&ndash;250K in, no pitch</div>
+      <p data-en="You join the campus first, then take investment for roughly 4–7%. Over 100 companies in three years; portfolio company LiveKit reached a $1B valuation." data-zh="先進駐園區，再拿投資，約換 4 至 7% 股權。三年超過 100 家；被投的 LiveKit 達到 10 億美元估值。">You join the campus first, then take investment for roughly 4&ndash;7%. Over 100 companies in three years; portfolio company LiveKit reached a $1B valuation.</p>
+    </div>
+    <div class="mdl rv">
+      <div class="mname" data-en="Berkeley SkyDeck" data-zh="Berkeley SkyDeck">Berkeley SkyDeck</div>
+      <div class="mtag" data-en="University accelerator" data-zh="大學型加速器">University accelerator</div>
+      <div class="mstat" data-en="Demo Day to 900+ investors" data-zh="Demo Day 面對 900＋ 投資人">Demo Day to 900+ investors</div>
+      <p data-en="Around 20 teams a batch. Over 1,500 companies to date, alumni have raised more than $1.7B, and it incubated Lime. Being selected is itself the signal." data-zh="每梯約 20 隊。累計超過 1,500 家，校友募資逾 17 億美元，孵出 Lime。被選上，本身就是信號。">Around 20 teams a batch. Over 1,500 companies to date, alumni have raised more than $1.7B, and it incubated Lime. Being selected is itself the signal.</p>
+    </div>
+    <div class="mdl rv">
+      <div class="mname" data-en="South Park Commons" data-zh="South Park Commons">South Park Commons</div>
+      <div class="mtag" data-en="Community-led fund" data-zh="社群型基金">Community-led fund</div>
+      <div class="mstat" data-en="$400K on selection, $600K reserved" data-zh="入選投 40 萬，保留 60 萬">$400K on selection, $600K reserved</div>
+      <p data-en="Invests $400K when you join and reserves $600K for the next round. Over 800 alumni, with one partner for roughly every two companies." data-zh="入選即投 40 萬美元，並保留 60 萬給下一輪。超過 800 位校友，約每兩家配一位合夥人。">Invests $400K when you join and reserves $600K for the next round. Over 800 alumni, with one partner for roughly every two companies.</p>
+    </div>
+    <div class="mdl rv">
+      <div class="mname" data-en="Founder University" data-zh="Founder University">Founder University</div>
+      <div class="mtag" data-en="Train, then invest" data-zh="先養成，再投資">Train, then invest</div>
+      <div class="mstat" data-en="$500 refundable, then $25–125K" data-zh="學費 500 可退，再投 2.5 至 12.5 萬">$500 refundable, then $25&ndash;125K</div>
+      <p data-en="A 12-week program with refundable tuition. It invests $25K–125K in the strongest graduates, then routes them into an accelerator. Performance decides, not a pitch." data-zh="12 週、學費可退。投最好的畢業生 2.5 至 12.5 萬美元，再接上加速器。用表現決定，不是用 pitch。">A 12-week program with refundable tuition. It invests $25K&ndash;125K in the strongest graduates, then routes them into an accelerator. Performance decides, not a pitch.</p>
+    </div>
+    <div class="mdl rv">
+      <div class="mname" data-en="Antler" data-zh="Antler">Antler</div>
+      <div class="mtag" data-en="Day Zero · gather first" data-zh="Day Zero · 先聚人">Day Zero · gather first</div>
+      <div class="mstat" data-en="1,400+ companies, 3 unicorns" data-zh="1,400＋ 家，3 隻獨角獸">1,400+ companies, 3 unicorns</div>
+      <p data-en="Gathers talent before the team even exists, then forms companies from the room. Named the most active venture investor globally in 2024." data-zh="在團隊還沒成形前先把人聚起來，再從中組隊。2024 年全球最活躍的創投。">Gathers talent before the team even exists, then forms companies from the room. Named the most active venture investor globally in 2024.</p>
+    </div>
+    <div class="mdl rv">
+      <div class="mname" data-en="Thiel / 1517" data-zh="Thiel／1517">Thiel / 1517</div>
+      <div class="mtag" data-en="The invisible college" data-zh="隱形大學">The invisible college</div>
+      <div class="mstat" data-en="5.9% billion-dollar rate" data-zh="5.9% 十億美元創辦人率">5.9% billion-dollar rate</div>
+      <p data-en="Backing talent at the earliest stage: a 5.9% billion-dollar founder rate versus roughly 1.9% for YC, and $750B+ in ecosystem value. The lineage this program follows." data-zh="在最早期就押注人才：十億美元創辦人率 5.9%，明顯高於 YC 約 1.9%，生態價值 750 億美元以上。這條血脈，正是本計畫的來歷。">Backing talent at the earliest stage: a 5.9% billion-dollar founder rate versus roughly 1.9% for YC, and $750B+ in ecosystem value. The lineage this program follows.</p>
+    </div>
+  </div>
+
+  <p class="body rv" style="margin-top:22px;max-width:60em" data-en="One honest note on the numbers above: those are the programs we learn from. <strong>Batch 1 itself is mentorship and a stage at Demo Day, not an investment round.</strong> The capital layer comes as the line proves out." data-zh="關於上面的數字，先誠實說一句：那些是我們借鏡的計畫。<strong>首發梯本身是導師陪伴與 Demo Day 的舞台，不是一輪投資。</strong>資本這一層，等這條線證明了再接上。">One honest note on the numbers above: those are the programs we learn from. <strong>Batch 1 itself is mentorship and a stage at Demo Day, not an investment round.</strong> The capital layer comes as the line proves out.</p>
+
+  <div class="mdl-note rv">
+    <p style="margin:0;color:var(--ink-soft);font-size:1.05rem" data-en="The counter-lesson: <b>On Deck</b> built 1,000+ companies in four years, but tried to do everything at once, lost focus and had to cut back hard. So we stay narrow: <b>one small batch a year, depth before scale.</b>" data-zh="反面的教訓：<b>On Deck</b> 四年做出 1,000＋ 家，但什麼都想做，焦點崩解、大幅收縮。所以我們刻意做窄：<b>一年一小梯，先做深、再談長大。</b>">The counter-lesson: <b>On Deck</b> built 1,000+ companies in four years, but tried to do everything at once, lost focus and had to cut back hard. So we stay narrow: <b>one small batch a year, depth before scale.</b></p>
+  </div>
+  <p class="mdl-src rv" data-en="Sources: f.inc, skydeck.berkeley.edu, South Park Commons, founder.university, Antler, Dealroom, Specter (n=185), PitchBook, TechCrunch. Some equity and batch figures are industry-compiled estimates." data-zh="來源：f.inc、skydeck.berkeley.edu、South Park Commons、founder.university、Antler、Dealroom、Specter（樣本 185）、PitchBook、TechCrunch。部分股權與每梯人數為業界整理值。">Sources: f.inc, skydeck.berkeley.edu, South Park Commons, founder.university, Antler, Dealroom, Specter (n=185), PitchBook, TechCrunch. Some equity and batch figures are industry-compiled estimates.</p>
+</div></section>
+
 <!-- HOW IT WORKS -->
-<section id="how" class="sec-paper"><div class="wrap">
+<section id="how" class="sec-cream"><div class="wrap">
   <div class="kick" data-en="How it works · 4 weeks" data-zh="運作方式 · 四週">How it works · 4 weeks</div>
   <h2 class="rv" data-en="One flight mentor a week. One honest founder update. <span class='hl'>One goal for the next.</span>" data-zh="每週一位飛行導師，一則誠實的創辦人進度，<span class='hl'>一個下週目標。</span>">One flight mentor a week. One honest founder update. <span class="hl">One goal for the next.</span></h2>
   <p class="lead rv" data-en="No lecture hall and no fixed syllabus, in the spirit of Founders Inc. Each Saturday brings a flight mentor, a public founder update where hits, misses and failure stories all count, and a single committed goal for the week ahead." data-zh="沒有講堂，也沒有固定課綱，精神取自 Founders Inc。每個週六都有一位飛行導師、一則公開的創辦人進度（成功、失敗與踩雷故事都算），以及一個為下週立下的明確目標。">No lecture hall and no fixed syllabus, in the spirit of Founders Inc. Each Saturday brings a flight mentor, a public founder update where hits, misses and failure stories all count, and a single committed goal for the week ahead.</p>
+
+  <div class="highlights rv" style="margin-top:30px">
+    <div class="hl-card">
+      <span class="hlk" data-en="0:00 · 40 min" data-zh="0:00 · 40 分">0:00 · 40 min</span>
+      <span class="hlv" data-en="The mentor's real story" data-zh="導師的真實故事">The mentor's real story</span>
+      <span class="hld" data-en="Thirty minutes from a flight mentor on the wins, failures and turning points, then ten minutes of Q&amp;A." data-zh="飛行導師講 30 分鐘：成功、失敗與轉折，再加 10 分鐘 Q&amp;A。">Thirty minutes from a flight mentor on the wins, failures and turning points, then ten minutes of Q&amp;A.</span>
+    </div>
+    <div class="hl-card">
+      <span class="hlk" data-en="0:40 · 40 min" data-zh="0:40 · 40 分">0:40 · 40 min</span>
+      <span class="hlv" data-en="Founder updates" data-zh="創辦人進度輪">Founder updates</span>
+      <span class="hld" data-en="Every team's week in the open: hits, misses and the failure stories, with live feedback from mentor and peers." data-zh="每隊公開回報這週：成功、失敗與踩雷故事，導師與同儕即時回饋。">Every team's week in the open: hits, misses and the failure stories, with live feedback from mentor and peers.</span>
+    </div>
+    <div class="hl-card">
+      <span class="hlk" data-en="1:20 · 10 min" data-zh="1:20 · 10 分">1:20 · 10 min</span>
+      <span class="hlv" data-en="Next-week goal" data-zh="下週目標">Next-week goal</span>
+      <span class="hld" data-en="One committed goal, said out loud. We open on it the following week." data-zh="立下一個明確目標，公開承諾，下週開場對賬。">One committed goal, said out loud. We open on it the following week.</span>
+    </div>
+  </div>
 
   <div class="tl">
     <div class="tlrow rv">
@@ -389,7 +481,7 @@ footer{padding:52px 0 60px;background:var(--ink);color:#cdbcae;font-size:1.02rem
       <div class="tlweek"><span class="wn">Week 3</span><span class="wd">Aug 29 · Sat</span></div>
       <div class="tlbody">
         <h4 data-en="Sharpen the story" data-zh="磨利敘事">Sharpen the story</h4>
-        <p data-en="Turn traction into a narrative an investor believes. A flight mentor stress-tests the pitch and the numbers behind it." data-zh="把牽引力變成投資人會相信的敘事。飛行導師會壓力測試你的 pitch 與背後的數字。">Turn traction into a narrative an investor believes. A flight mentor stress-tests the pitch and the numbers behind it.</p>
+        <p data-en="Turn real results into a narrative an investor believes. A flight mentor stress-tests the pitch and the numbers behind it." data-zh="把實際成績變成投資人會相信的敘事。飛行導師會壓力測試你的 pitch 與背後的數字。">Turn real results into a narrative an investor believes. A flight mentor stress-tests the pitch and the numbers behind it.</p>
         <span class="tltag" data-en="Flight mentor + founder update" data-zh="飛行導師 ＋ 創辦人進度">Flight mentor + founder update</span>
       </div>
     </div>
@@ -401,11 +493,19 @@ footer{padding:52px 0 60px;background:var(--ink);color:#cdbcae;font-size:1.02rem
         <span class="tltag" data-en="Final judge + Deal Lens read" data-zh="最終評審 ＋ Deal Lens 評估">Final judge + Deal Lens read</span>
       </div>
     </div>
+    <div class="tlrow rv">
+      <div class="tlweek"><span class="wn" data-en="Select" data-zh="選拔">Select</span><span class="wd">Sep 6 · Sun</span></div>
+      <div class="tlbody">
+        <h4 data-en="Selection" data-zh="選拔">Selection</h4>
+        <p data-en="The host and judges pick 3 to 5 teams to graduate onto the Demo Day stage. Deal Lens gives each team a structured snapshot as a shared starting point; people make the call." data-zh="主辦與評審選出 3 至 5 隊登上 Demo Day 舞台。Deal Lens 給每隊一張結構化快照當共同起點，最後仍由人拍板。">The host and judges pick 3 to 5 teams to graduate onto the Demo Day stage. Deal Lens gives each team a structured snapshot as a shared starting point; people make the call.</p>
+        <span class="tltag" data-en="Host + judges decide" data-zh="主辦 ＋ 評審拍板">Host + judges decide</span>
+      </div>
+    </div>
     <div class="tlrow demorow rv">
-      <div class="tlweek"><span class="wn">Demo</span><span class="wd">Sep 9 · Tue</span></div>
+      <div class="tlweek"><span class="wn">Demo</span><span class="wd">Sep 9 · Wed</span></div>
       <div class="tlbody">
         <h4 data-en="Demo Day at the BobaTech Summit" data-zh="登上 BobaTech Summit 的 Demo Day">Demo Day at the BobaTech Summit</h4>
-        <p data-en="Graduate on the biggest stage available: pitch at the BobaTech Summit, Asia's first Gen Z founder summit." data-zh="在最大的舞台上畢業：登上亞洲首場 Gen Z 創辦人高峰會 BobaTech Summit pitch。">Graduate on the biggest stage available: pitch at the BobaTech Summit, Asia's first Gen Z founder summit.</p>
+        <p data-en="Graduate on the biggest stage available: pitch at the BobaTech Summit, Asia's largest Gen Z founder summit." data-zh="在最大的舞台上畢業：登上亞洲最大的 Gen Z 創辦人高峰會 BobaTech Summit pitch。">Graduate on the biggest stage available: pitch at the BobaTech Summit, Asia's largest Gen Z founder summit.</p>
         <span class="tltag" data-en="The exit stage" data-zh="出海口舞台">The exit stage</span>
       </div>
     </div>
@@ -413,7 +513,7 @@ footer{padding:52px 0 60px;background:var(--ink);color:#cdbcae;font-size:1.02rem
 </div></section>
 
 <!-- MENTORS -->
-<section id="mentors" class="sec-cream"><div class="wrap">
+<section id="mentors" class="sec-paper"><div class="wrap">
   <div class="kick" data-en="The Mentors" data-zh="導師陣容">The Mentors</div>
   <h2 class="rv" data-en="Operators and investors who have done it, <span class='hl'>in the room with you.</span>" data-zh="做過這一切的營運者與投資人，<span class='hl'>和你在同一個房間裡。</span>">Operators and investors who have done it, <span class="hl">in the room with you.</span></h2>
   <p class="lead rv" data-en="A rotating bench of flight mentors and judges. Founders who have raised, and investors who write the checks." data-zh="一組輪替的飛行導師與評審：募過資的創辦人，以及真正開支票的投資人。">A rotating bench of flight mentors and judges. Founders who have raised, and investors who write the checks.</p>
@@ -429,21 +529,21 @@ footer{padding:52px 0 60px;background:var(--ink);color:#cdbcae;font-size:1.02rem
   <div class="mentors">
     <div class="mcard rv">
       <div class="headshot" aria-hidden="true">DD</div>
-      <div class="mn" data-en="David Day" data-zh="David Day">David Day</div>
-      <div class="mr" data-en="Founder, LunaBill" data-zh="LunaBill 創辦人">Founder, LunaBill</div>
-      <div class="mo" data-en="YC F25 · Formosa Founders House" data-zh="YC F25 · Formosa Founders House">YC F25 · Formosa Founders House</div>
+      <div class="mn" data-en="David Day" data-zh="David Day 戴惟">David Day</div>
+      <div class="mr" data-en="Co-founder, LunaBill (YC F25)" data-zh="LunaBill 共同創辦人（YC F25）">Co-founder, LunaBill (YC F25)</div>
+      <div class="mo" data-en="Formosa Founders House" data-zh="Formosa Founders House">Formosa Founders House</div>
     </div>
     <div class="mcard rv">
       <div class="headshot" aria-hidden="true">CJ</div>
       <div class="mn" data-en="Cjin Cheng (CJ)" data-zh="Cjin Cheng（CJ）">Cjin Cheng (CJ)</div>
       <div class="mr" data-en="Venture Partner, 500 Global" data-zh="500 Global 創投合夥人">Venture Partner, 500 Global</div>
-      <div class="mo" data-en="Tonic Fund" data-zh="Tonic Fund">Tonic Fund</div>
+      <div class="mo" data-en="Brought 500 Global to Taiwan · Tonic Fund" data-zh="把 500 Global 帶進台灣 · Tonic Fund">Brought 500 Global to Taiwan · Tonic Fund</div>
     </div>
     <div class="mcard rv">
       <div class="headshot" aria-hidden="true">SI</div>
       <div class="mn" data-en="Sing" data-zh="張歆浤 Sing">Sing</div>
-      <div class="mr" data-en="StarWorks" data-zh="炙星 StarWorks">StarWorks</div>
-      <div class="mo" data-en="Space &amp; capital" data-zh="空間與資本">Space &amp; capital</div>
+      <div class="mr" data-en="CEO, StarWorks" data-zh="炙星 StarWorks 執行長">CEO, StarWorks</div>
+      <div class="mo" data-en="Ecosystem builder" data-zh="生態系建構者">Ecosystem builder</div>
     </div>
     <div class="mcard rv">
       <div class="headshot" aria-hidden="true">JY</div>
@@ -452,11 +552,11 @@ footer{padding:52px 0 60px;background:var(--ink);color:#cdbcae;font-size:1.02rem
       <div class="mo" data-en="Demo Day panel" data-zh="Demo Day 評審團">Demo Day panel</div>
     </div>
   </div>
-  <p class="moreline rv" data-en="Plus rotating flight mentors joining each week. More names announced as Batch 1 forms." data-zh="還有每週加入的輪替飛行導師。更多名單將隨第一期成形陸續公布。">Plus rotating flight mentors joining each week. More names announced as Batch 1 forms.</p>
+  <p class="moreline rv" data-en="One flight mentor each Saturday, with the week order set by the host. The final-week judging panel may also include Tina and NTU's Brennan. More names as Batch 1 forms." data-zh="每週六一位飛行導師，週次順序由主辦排定。末場評審團可能再加入 Tina 與台大創投的 Brennan。更多名單將隨第一期成形陸續公布。">One flight mentor each Saturday, with the week order set by the host. The final-week judging panel may also include Tina and NTU's Brennan. More names as Batch 1 forms.</p>
 </div></section>
 
 <!-- LIFE / COMMUNITY -->
-<section id="life" class="sec-paper"><div class="wrap">
+<section id="life" class="sec-cream"><div class="wrap">
   <div class="gallery-head">
     <div>
       <div class="kick" data-en="The Community" data-zh="社群">The Community</div>
@@ -482,7 +582,7 @@ footer{padding:52px 0 60px;background:var(--ink);color:#cdbcae;font-size:1.02rem
 </div></section>
 
 <!-- ECOSYSTEM -->
-<section id="ecosystem" class="sec-cream"><div class="wrap">
+<section id="ecosystem" class="sec-paper"><div class="wrap">
   <div class="kick" data-en="The Ecosystem" data-zh="生態系">The Ecosystem</div>
   <h2 class="rv" data-en="Three forces behind <span class='hl'>every founder in the room.</span>" data-zh="房間裡每位創辦人背後，<span class='hl'>有三股力量。</span>">Three forces behind <span class="hl">every founder in the room.</span></h2>
   <p class="lead rv" data-en="The Fellowship is not one org. It is a coalition: a space-and-capital partner, a living founder community, and a program with a real evaluation engine." data-zh="Fellowship 不是單一機構，而是一個聯盟：一位提供空間與資本的夥伴、一個活躍的創辦人社群，以及一套帶有真實評估引擎的計畫。">The Fellowship is not one org. It is a coalition: a space-and-capital partner, a living founder community, and a program with a real evaluation engine.</p>
@@ -491,8 +591,8 @@ footer{padding:52px 0 60px;background:var(--ink);color:#cdbcae;font-size:1.02rem
     <div class="econode rv">
       <div class="en-ic"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-6h6v6"/></svg></div>
       <h4 data-en="StarWorks" data-zh="炙星 StarWorks">StarWorks</h4>
-      <div class="en-role" data-en="Space &amp; capital" data-zh="空間與資本">Space &amp; capital</div>
-      <p data-en="The venue, the runway and the early checks. A physical home base and the capital to keep building." data-zh="場地、跑道與早期支票。一個實體基地，加上讓你持續打造產品的資本。">The venue, the runway and the early checks. A physical home base and the capital to keep building.</p>
+      <div class="en-role" data-en="Host &amp; home" data-zh="主辦與基地">Host &amp; home</div>
+      <p data-en="The Fellowship is hosted by StarWorks. Caleb leads founder selection and runs it on the ground; Sing brings the space and the talent." data-zh="Fellowship 由炙星 StarWorks 主辦。小朱主導選人與現場執行；Sing 哥帶來空間與人才。">The Fellowship is hosted by StarWorks. Caleb leads founder selection and runs it on the ground; Sing brings the space and the talent.</p>
     </div>
     <div class="ecox" aria-hidden="true">&times;</div>
     <div class="econode rv">
@@ -505,14 +605,14 @@ footer{padding:52px 0 60px;background:var(--ink);color:#cdbcae;font-size:1.02rem
     <div class="econode rv">
       <div class="en-ic"><svg viewBox="0 0 24 24" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></div>
       <h4 data-en="Vincent" data-zh="Vincent">Vincent</h4>
-      <div class="en-role" data-en="Program &amp; Deal Lens" data-zh="計畫與 Deal Lens">Program &amp; Deal Lens</div>
-      <p data-en="Runs the four-week program and reads every project through the Deal Lens D/F/V evaluation engine." data-zh="主導這套四週計畫，並用 Deal Lens 的 D/F/V 評估引擎檢視每一個專案。">Runs the four-week program and reads every project through the Deal Lens D/F/V evaluation engine.</p>
+      <div class="en-role" data-en="Program design &amp; Deal Lens" data-zh="機制設計與 Deal Lens">Program design &amp; Deal Lens</div>
+      <p data-en="Designs the weekly mechanics and reads every team through the Deal Lens D/F/V engine, a structured snapshot the room decides from." data-zh="設計每週的運作機制，並用 Deal Lens 的 D/F/V 引擎給每隊一張結構化快照，當作大家一起判斷的共同起點。">Designs the weekly mechanics and reads every team through the Deal Lens D/F/V engine, a structured snapshot the room decides from.</p>
     </div>
   </div>
 </div></section>
 
 <!-- DEMO DAY / EXIT -->
-<section id="demoday" class="sec-paper"><div class="wrap">
+<section id="demoday" class="sec-cream"><div class="wrap">
   <div class="kick" data-en="The Exit" data-zh="出海口">The Exit</div>
   <h2 class="rv" data-en="You graduate onto <span class='hl'>the BobaTech Summit stage.</span>" data-zh="你在 <span class='hl'>BobaTech Summit 的舞台上畢業。</span>">You graduate onto <span class="hl">the BobaTech Summit stage.</span></h2>
 
@@ -525,7 +625,7 @@ footer{padding:52px 0 60px;background:var(--ink);color:#cdbcae;font-size:1.02rem
 
   <div class="exit-card rv">
     <div class="goldkick" data-en="Demo Day · Sep 9–10" data-zh="Demo Day · 9 月 9 至 10 日">Demo Day · Sep 9&ndash;10</div>
-    <h3 data-en="Graduate onto Asia's first Gen Z founder summit." data-zh="在亞洲首場 <span class='hl'>Gen Z 創辦人高峰會</span>上畢業。">Graduate onto Asia's first Gen Z founder summit.</h3>
+    <h3 data-en="Graduate onto Asia's largest Gen Z founder summit." data-zh="在亞洲最大的 <span class='hl'>Gen Z 創辦人高峰會</span>上畢業。">Graduate onto Asia's largest Gen Z founder summit.</h3>
     <p data-en="The Fellowship graduates onto the BobaTech Summit, hosted by Stanford ASES Taiwan. It is the biggest Gen Z founder stage in the region, and it is where you take the mic." data-zh="Fellowship 的畢業舞台就是 BobaTech Summit，由 Stanford ASES Taiwan 主辦。這是本地區最大的 Gen Z 創辦人舞台，也是你拿起麥克風的地方。">The Fellowship graduates onto the BobaTech Summit, hosted by Stanford ASES Taiwan. It is the biggest Gen Z founder stage in the region, and it is where you take the mic.</p>
 
     <div class="highlights">
@@ -536,8 +636,8 @@ footer{padding:52px 0 60px;background:var(--ink);color:#cdbcae;font-size:1.02rem
       </div>
       <div class="hl-card">
         <span class="hlk" data-en="The stage" data-zh="舞台">The stage</span>
-        <span class="hlv" data-en="Asia's first Gen Z summit" data-zh="亞洲首場 Gen Z 高峰會">Asia's first Gen Z summit</span>
-        <span class="hld" data-en="The biggest young-founder stage in the region." data-zh="本地區最大的年輕創辦人舞台。">The biggest young-founder stage in the region.</span>
+        <span class="hlv" data-en="Asia's largest Gen Z summit" data-zh="亞洲最大的 Gen Z 高峰會">Asia's largest Gen Z summit</span>
+        <span class="hld" data-en="100 selected Gen Z founders and international investors in the room, Sep 9–10 in Taipei." data-zh="100 位精選 Gen Z 創辦人與國際投資人在場，9 月 9 至 10 日在台北。">100 selected Gen Z founders and international investors in the room, Sep 9&ndash;10 in Taipei.</span>
       </div>
       <div class="hl-card">
         <span class="hlk" data-en="On the mic" data-zh="麥克風上">On the mic</span>
@@ -558,19 +658,24 @@ footer{padding:52px 0 60px;background:var(--ink);color:#cdbcae;font-size:1.02rem
 
     <div class="exit-meta">
       <span data-en="Host · Stanford ASES Taiwan" data-zh="主辦 · Stanford ASES Taiwan">Host · Stanford ASES Taiwan</span>
-      <span data-en="Asia's first Gen Z summit" data-zh="亞洲首場 Gen Z 高峰會">Asia's first Gen Z summit</span>
+      <span data-en="Asia's largest Gen Z summit" data-zh="亞洲最大的 Gen Z 高峰會">Asia's largest Gen Z summit</span>
     </div>
+  </div>
+
+  <div class="mdl-note rv" style="margin-top:28px">
+    <div class="cl" style="font-family:var(--mono);font-size:1rem;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-deep);margin-bottom:8px" data-en="The long game" data-zh="長期定位">The long game</div>
+    <p style="margin:0;color:var(--ink-soft);font-size:1.05rem" data-en="Batch 1 is the first step. The Fellowship is built to run once a year, and the line can outgrow any single summit. Where it goes next, from a standing stage for Taiwan's earliest founders to something larger, is a conversation for after this batch proves out." data-zh="首發梯是第一步。這個 Fellowship 設計成每年一梯，而且這條線本身可以長得比任何一場高峰會更大。它接下來會長成什麼：從台灣最早期創辦人的常設舞台，到更大的東西，等這一梯證明了，再一起往下談。">Batch 1 is the first step. The Fellowship is built to run once a year, and the line can outgrow any single summit. Where it goes next, from a standing stage for Taiwan's earliest founders to something larger, is a conversation for after this batch proves out.</p>
   </div>
 </div></section>
 
 <!-- FAQ -->
-<section id="faq" class="sec-cream"><div class="wrap">
+<section id="faq" class="sec-paper"><div class="wrap">
   <div class="kick" data-en="FAQ" data-zh="常見問題">FAQ</div>
   <h2 class="rv" data-en="Questions before you apply." data-zh="申請前，你可能想問的。">Questions before you apply.</h2>
   <div class="faq rv">
     <details open>
       <summary><span data-en="Who is the Fellowship for?" data-zh="Fellowship 適合什麼樣的人？">Who is the Fellowship for?</span><span class="fx" aria-hidden="true"></span></summary>
-      <div class="fa" data-en="Builders who are already shipping something real: a prototype, early users or working code, and who want to make the leap to founder. We back talent over credentials, so the school, title or network on your CV is not what we screen on." data-zh="已經在動手做的 builder：有原型、早期用戶或真實的程式碼，並想跨出成為 founder 的那一步。我們看才華而非履歷，所以你 CV 上的學校、頭銜或人脈不是我們篩選的標準。">Builders who are already shipping something real: a prototype, early users or working code, and who want to make the leap to founder. We back talent over credentials, so the school, title or network on your CV is not what we screen on.</div>
+      <div class="fa" data-en="Builders who are already shipping something real: a prototype, early users or working code, and who want to make the leap to founder. Most are pre-seed, often Gen Z, with a product or real results and usually little revenue yet. We back talent over credentials, so the school, title or network on your CV is not what we screen on." data-zh="已經在動手做的 builder：有原型、早期用戶或真實的程式碼，並想跨出成為 founder 的那一步。多半是 pre-seed、常是 Gen Z，已經有產品或實際成績，通常還沒什麼營收。我們看才華而非履歷，所以你 CV 上的學校、頭銜或人脈不是我們篩選的標準。">Builders who are already shipping something real: a prototype, early users or working code, and who want to make the leap to founder. Most are pre-seed, often Gen Z, with a product or real results and usually little revenue yet. We back talent over credentials, so the school, title or network on your CV is not what we screen on.</div>
     </details>
     <details>
       <summary><span data-en="How long is it, and when does Batch 1 run?" data-zh="計畫多長？第一期什麼時候開始？">How long is it, and when does Batch 1 run?</span><span class="fx" aria-hidden="true"></span></summary>
@@ -586,11 +691,15 @@ footer{padding:52px 0 60px;background:var(--ink);color:#cdbcae;font-size:1.02rem
     </details>
     <details>
       <summary><span data-en="Where does Demo Day happen?" data-zh="Demo Day 在哪裡舉行？">Where does Demo Day happen?</span><span class="fx" aria-hidden="true"></span></summary>
-      <div class="fa" data-en="On the BobaTech Summit stage, Sep 9. The summit is hosted by Stanford ASES Taiwan and is Asia's first Gen Z founder summit, with speakers including Kevin Lin (Twitch co-founder) and K.S. Pua (Phison founder)." data-zh="9 月 9 日，登上 BobaTech Summit 的舞台。這場高峰會由 Stanford ASES Taiwan 主辦，是亞洲首場 Gen Z 創辦人高峰會，講者包括 Kevin Lin（Twitch 共同創辦人）與潘健成（群聯創辦人）。">On the BobaTech Summit stage, Sep 9. The summit is hosted by Stanford ASES Taiwan and is Asia's first Gen Z founder summit, with speakers including Kevin Lin (Twitch co-founder) and K.S. Pua (Phison founder).</div>
+      <div class="fa" data-en="On the BobaTech Summit stage, Sep 9. The summit is hosted by Stanford ASES Taiwan and is Asia's largest Gen Z founder summit, with speakers including Kevin Lin (Twitch co-founder) and K.S. Pua (Phison founder)." data-zh="9 月 9 日，登上 BobaTech Summit 的舞台。這場高峰會由 Stanford ASES Taiwan 主辦，是亞洲最大的 Gen Z 創辦人高峰會，講者包括 Kevin Lin（Twitch 共同創辦人）與潘健成（群聯創辦人）。">On the BobaTech Summit stage, Sep 9. The summit is hosted by Stanford ASES Taiwan and is Asia's largest Gen Z founder summit, with speakers including Kevin Lin (Twitch co-founder) and K.S. Pua (Phison founder).</div>
     </details>
     <details>
-      <summary><span data-en="How do I apply?" data-zh="我要怎麼申請？">How do I apply?</span><span class="fx" aria-hidden="true"></span></summary>
-      <div class="fa" data-en="Hit any Apply button on this page and tell us what you are building. Batch 1 is forming now and reviewed on a rolling basis, so earlier applications get earlier decisions." data-zh="點擊本頁任一個 Apply 按鈕，告訴我們你正在做什麼。第一期正在成形，並以滾動制審核，越早申請越早得到結果。">Hit any Apply button on this page and tell us what you are building. Batch 1 is forming now and reviewed on a rolling basis, so earlier applications get earlier decisions.</div>
+      <summary><span data-en="Is Batch 1 open to the public?" data-zh="第一期有對外公開招生嗎？">Is Batch 1 open to the public?</span><span class="fx" aria-hidden="true"></span></summary>
+      <div class="fa" data-en="Not this time. Batch 1 is a small, invitation-only group of 10 to 15 teams drawn from the host's founder network, and Demo Day is invitation-only too. Register your interest and we will keep you in mind as places and future batches open up." data-zh="這一梯沒有。第一期是 10 至 15 隊的小規模邀請制團隊，來自主辦的創辦人網絡，Demo Day 也是邀請制。先登記興趣，之後有名額或新一梯，我們會把你放在心上。">Not this time. Batch 1 is a small, invitation-only group of 10 to 15 teams drawn from the host's founder network, and Demo Day is invitation-only too. Register your interest and we will keep you in mind as places and future batches open up.</div>
+    </details>
+    <details>
+      <summary><span data-en="How do I register my interest?" data-zh="我要怎麼登記興趣？">How do I register my interest?</span><span class="fx" aria-hidden="true"></span></summary>
+      <div class="fa" data-en="Use any Register interest button on this page and tell us what you are building. We read every note. If there is a fit for this batch or the next one, we will reach out." data-zh="點本頁任何一個「登記興趣」按鈕，告訴我們你正在做什麼。每一則我們都會看。這一梯或下一梯若合適，我們會主動聯絡你。">Use any Register interest button on this page and tell us what you are building. We read every note. If there is a fit for this batch or the next one, we will reach out.</div>
     </details>
   </div>
 </div></section>
@@ -598,16 +707,16 @@ footer{padding:52px 0 60px;background:var(--ink);color:#cdbcae;font-size:1.02rem
 <!-- APPLY -->
 <section id="apply" class="applysec"><div class="wrap">
   <div class="apply-box rv">
-    <div class="kick" style="justify-content:center" data-en="Batch 1 is forming" data-zh="第一期招募中">Batch 1 is forming</div>
-    <h2 data-en="Four weeks from builder to founder. <span class='hl'>Starts Aug 15.</span>" data-zh="四週，從 builder 到 founder。<span class='hl'>8 月 15 日開課。</span>">Four weeks from builder to founder. <span class="hl">Starts Aug 15.</span></h2>
-    <p class="lead" data-en="If you are already building, we want to be your first believer. Applications for Batch 1 are open and reviewed on a rolling basis." data-zh="如果你已經在動手做，我們想成為你的第一個相信者。第一期申請已開放，並以滾動制審核。">If you are already building, we want to be your first believer. Applications for Batch 1 are open and reviewed on a rolling basis.</p>
+    <div class="kick" style="justify-content:center" data-en="Batch 1 · by invitation" data-zh="第一期 · 邀請制成形中">Batch 1 · by invitation</div>
+    <h2 data-en="Four weeks from builder to founder. <span class='hl'>Batch 1 begins Aug 15.</span>" data-zh="四週，從 builder 到 founder。<span class='hl'>第一期 8 月 15 日開課。</span>">Four weeks from builder to founder. <span class="hl">Batch 1 begins Aug 15.</span></h2>
+    <p class="lead" data-en="Batch 1 forms by invitation, but the door is not closed. If you are building something real, tell us what you are working on and we will keep you in mind for this batch and the next." data-zh="第一期採邀請制成形，但門沒有關上。如果你正在做一個真實的東西，告訴我們你在忙什麼，這一梯或下一梯，我們都會把你放在心上。">Batch 1 forms by invitation, but the door is not closed. If you are building something real, tell us what you are working on and we will keep you in mind for this batch and the next.</p>
     <div class="cta-row">
       <button class="btn btn-primary" onclick="openApply()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        <span data-en="Apply now" data-zh="立即申請">Apply now</span>
+        <span data-en="Register your interest" data-zh="登記興趣">Register your interest</span>
       </button>
     </div>
-    <div class="apply-note" data-en="Rolling basis · we reply to every application." data-zh="滾動審核 · 每一封申請我們都會回覆。">Rolling basis · we reply to every application.</div>
+    <div class="apply-note" data-en="We read every note, and we reply." data-zh="每一則我們都會看，也都會回。">We read every note, and we reply.</div>
   </div>
 </div></section>
 
@@ -615,7 +724,7 @@ footer{padding:52px 0 60px;background:var(--ink);color:#cdbcae;font-size:1.02rem
   <div class="footin">
     <div>
       <div class="fbrand">
-        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="9" fill="none" stroke="#FF7A45" stroke-width="2.4"/><circle cx="16" cy="16" r="3.4" fill="#FF7A45"/><circle cx="24.5" cy="9.5" r="2.6" fill="#0FA79B"/></svg>
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M26.5 10A11 11 0 1 0 27.5 19" fill="none" stroke="#FF7A45" stroke-width="2.6" stroke-linecap="round"/><path d="M16 8.2l1.8 5 5 1.8-5 1.8-1.8 5-1.8-5-5-1.8 5-1.8z" fill="#FF7A45"/><circle cx="26.8" cy="9.4" r="2.3" fill="#0FA79B"/></svg>
         <span>THE FELLOWSHIP</span>
       </div>
       <p style="margin-top:12px;color:#a89a8c;max-width:26em;font-size:1.02rem" data-en="An invisible college for builders. StarWorks × the founder community × Vincent." data-zh="一所給 builder 的隱形大學。炙星 StarWorks × 創辦人社群 × Vincent。">An invisible college for builders. StarWorks × the founder community × Vincent.</p>
@@ -625,20 +734,26 @@ footer{padding:52px 0 60px;background:var(--ink);color:#cdbcae;font-size:1.02rem
       <a href="#how" data-en="How it works" data-zh="運作方式">How it works</a>
       <a href="#mentors" data-en="Mentors" data-zh="導師">Mentors</a>
       <a href="#demoday" data-en="Demo Day" data-zh="Demo Day">Demo Day</a>
-      <a href="#apply" onclick="openApply();return false;" data-en="Apply" data-zh="申請">Apply</a>
+      <a href="#apply" onclick="openApply();return false;" data-en="Register interest" data-zh="登記興趣">Register interest</a>
     </div>
   </div>
   <div class="footcopy" data-en="© 2026 The Fellowship · Batch 1 · Starts Aug 15 · Demo Day at the BobaTech Summit" data-zh="© 2026 The Fellowship · 第一期 · 8 月 15 日開課 · Demo Day 在 BobaTech Summit">© 2026 The Fellowship · Batch 1 · Starts Aug 15 · Demo Day at the BobaTech Summit</div>
 </div></footer>
 
+<!-- SUCCESS TOAST -->
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <span class="tico"><svg viewBox="0 0 24 24" stroke-width="2.6" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>
+  <span class="tmsg" data-en="Thanks. We have your note and will be in touch." data-zh="收到了，謝謝你。我們會與你聯繫。">Thanks. We have your note and will be in touch.</span>
+</div>
+
 <!-- APPLY MODAL -->
-<div class="modal" id="applyModal" role="dialog" aria-modal="true" data-en-aria="Apply to the Fellowship" data-zh-aria="申請 Fellowship">
+<div class="modal" id="applyModal" role="dialog" aria-modal="true" data-en-aria="Register interest in the Fellowship" data-zh-aria="登記 Fellowship 興趣">
   <div class="modal-card">
     <button class="mclose" onclick="closeApply()" data-en-aria="Close" data-zh-aria="關閉"><svg viewBox="0 0 24 24" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
-    <h3 data-en="Apply for Batch 1" data-zh="申請第一期">Apply for Batch 1</h3>
-    <p class="msub" data-en="Tell us what you are building. We reply to every application." data-zh="告訴我們你正在做什麼。每一封申請我們都會回覆。">Tell us what you are building. We reply to every application.</p>
-    <form action="https://formsubmit.co/new.vincent21@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="Fellowship Batch 1 application" />
+    <h3 data-en="Register your interest" data-zh="登記興趣">Register your interest</h3>
+    <p class="msub" data-en="Batch 1 is by invitation. Tell us what you are building, and we will keep you in mind for this batch and the next." data-zh="第一期採邀請制。告訴我們你正在做什麼，這一梯或下一梯我們都會把你放在心上。">Batch 1 is by invitation. Tell us what you are building, and we will keep you in mind for this batch and the next.</p>
+    <form action="https://formsubmit.co/vincent@easeai.com.tw" method="POST">
+      <input type="hidden" name="_subject" value="Fellowship interest registration" />
       <input type="hidden" name="_captcha" value="false" />
       <input type="hidden" name="_template" value="table" />
       <input type="hidden" name="_next" value="https://vincentt-wang.github.io/fellowship/?applied=1" />
@@ -658,8 +773,8 @@ footer{padding:52px 0 60px;background:var(--ink);color:#cdbcae;font-size:1.02rem
         <label data-en="A link (optional)" data-zh="一個連結（選填）">A link (optional)</label>
         <input type="text" name="link" data-en-ph="Demo, repo, deck, portfolio or LinkedIn" data-zh-ph="Demo、repo、簡報、作品集或 LinkedIn" placeholder="Demo, repo, deck, portfolio or LinkedIn" />
       </div>
-      <button type="submit" class="msubmit" data-en="Send application" data-zh="送出申請">Send application</button>
-      <div class="mfoot" data-en="Batch 1 · reviewed on a rolling basis" data-zh="第一期 · 滾動制審核">Batch 1 · reviewed on a rolling basis</div>
+      <button type="submit" class="msubmit" data-en="Send" data-zh="送出登記">Send</button>
+      <div class="mfoot" data-en="Batch 1 · by invitation · we read every note" data-zh="第一期 · 邀請制 · 每一則我們都會看">Batch 1 · by invitation · we read every note</div>
     </form>
   </div>
 </div>
@@ -673,8 +788,9 @@ footer{padding:52px 0 60px;background:var(--ink);color:#cdbcae;font-size:1.02rem
     {"@type":"Question","name":"How long is it, and when does Batch 1 run?","acceptedAnswer":{"@type":"Answer","text":"Four weeks. Batch 1 meets on four Saturdays: Aug 15, Aug 22, Aug 29 and Sep 5, then graduates at Demo Day on Sep 9 at the BobaTech Summit."}},
     {"@type":"Question","name":"Is there a fixed curriculum?","acceptedAnswer":{"@type":"Answer","text":"No. In the spirit of Founders Inc, there is no set syllabus. Each week pairs you with a flight mentor and pushes your one real project forward, measured by an honest founder update and a single goal for the next week."}},
     {"@type":"Question","name":"What is the Deal Lens evaluation?","acceptedAnswer":{"@type":"Answer","text":"Deal Lens is the D/F/V framework we use to read every project: Desirability, Feasibility and Viability. Before Demo Day, every founder gets an investor-grade read on where they stand."}},
-    {"@type":"Question","name":"Where does Demo Day happen?","acceptedAnswer":{"@type":"Answer","text":"On the BobaTech Summit stage on Sep 9. The summit is hosted by Stanford ASES Taiwan and is Asia's first Gen Z founder summit, with speakers including Kevin Lin, Twitch co-founder, and K.S. Pua, Phison founder."}},
-    {"@type":"Question","name":"How do I apply?","acceptedAnswer":{"@type":"Answer","text":"Hit any Apply button on this page and tell us what you are building. Batch 1 is forming now and reviewed on a rolling basis, so earlier applications get earlier decisions."}}
+    {"@type":"Question","name":"Where does Demo Day happen?","acceptedAnswer":{"@type":"Answer","text":"On the BobaTech Summit stage on Sep 9. The summit is hosted by Stanford ASES Taiwan and is Asia's largest Gen Z founder summit, with speakers including Kevin Lin, Twitch co-founder, and K.S. Pua, Phison founder."}},
+    {"@type":"Question","name":"Is Batch 1 open to the public?","acceptedAnswer":{"@type":"Answer","text":"Not this time. Batch 1 is a small, invitation-only group of 10 to 15 teams drawn from the host's founder network, and Demo Day is invitation-only too. Register your interest and we will keep you in mind as places and future batches open up."}},
+    {"@type":"Question","name":"How do I register my interest?","acceptedAnswer":{"@type":"Answer","text":"Use any Register interest button on this page and tell us what you are building. We read every note. If there is a fit for this batch or the next one, we will reach out."}}
   ]
 }
 </script>
@@ -753,9 +869,14 @@ document.getElementById('applyModal').addEventListener('click',function(e){
 document.addEventListener('keydown',function(e){
   if(e.key==='Escape')closeApply();
 });
-/* open modal automatically after a successful FormSubmit redirect */
+/* show a confirmation toast after a successful FormSubmit redirect */
 if(new URLSearchParams(location.search).get('applied')==='1'){
   history.replaceState(null,'',location.pathname);
+  var _t=document.getElementById('toast');
+  if(_t){
+    setTimeout(function(){_t.classList.add('show');},400);
+    setTimeout(function(){_t.classList.remove('show');},7000);
+  }
 }
 
 /* ── SCROLL REVEAL ─────────────────────────────────────────── */
